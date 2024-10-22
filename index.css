@@ -50,23 +50,82 @@ li a {
     height: 80vh;
     background-image: url(asset/background-image.jpg);
     background-size: cover;
-    position: relative;
-    
-}
-
-
+    position: absolute;
+    display: flex; 
+    }
 
 .card-wrap {
+    width: 70%;
+    height: 700px;
+    padding: 50px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    padding: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    position:relative;
+    top: 500px;
+    left: 150px;
 }
 
 .card {
     height: 300px;
-    width: 300px;
-    background-color: azure;
+    width: 250px;
+    background-color: transparent;
     margin: 10px;
     border-radius: 10px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+.card-image{
+    width: 250px;
+    height: 150px;
+}
+.card-image img{  
+    border-radius: 10px 10px 0px 0px;    
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .card-header-text span{
+    display: inline-block;
+    background: #F7DFF5;
+    padding: 8px 15px;
+    font-size: 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+  }
+
+
+  .main-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+ 
+  
+  .card-description {
+    color: #000;
+    font-size: 0.90rem;
+    font-weight: 600;
+  }    
+
+  .card .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(45deg);
+    height: 35px;
+    width: 35px;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 50%;
+    transition: 0.2s ease;
+}
+
+.card :hover .arrow  {
+    background: #000;
+    color: #fff; 
+}
+

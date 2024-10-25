@@ -1,5 +1,3 @@
-
-
 function getInputId(id) {
     return document.getElementById(id);
 }

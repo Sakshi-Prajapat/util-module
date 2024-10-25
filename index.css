@@ -50,27 +50,57 @@ li a {
     background-size: cover;
     /* position: absolute; */
     display: flex;
+    justify-content: center;
 }
 
 .card-wrap {
     width: 70%;
-    height: 700px;
     padding: 50px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: row;
     gap: 5px;
     position: relative;
-    top: 500px;
-    left: 150px;
+    top: 65%;
+    /* left: 150px; */
     z-index: 4;
+    align-items: center;
+
+}
+.first-card-section{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.second-card-section{
+    display: none;
+    flex-direction: row;
+}
+
+.left-arrow-button{
+    height: 50px;
+    width: 50px;
+    background-color: #fff;
+    border : none;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+.right-arrow-button{
+    height: 50px;
+    width: 50px;
+    background-color: #fff;
+    border : none;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 }
 
 .card {
     height: 300px;
     width: 250px;
-    /* background-color: transparent; */
-    background-color: wheat;
+    background-color: transparent;
+    /* background-color: wheat; */
     margin: 10px;
     border-radius: 10px;
     padding: 20px;
@@ -244,5 +274,4 @@ form {
     justify-content: center;
     padding: 20px;
 }
-
 

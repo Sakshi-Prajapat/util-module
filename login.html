@@ -2,7 +2,7 @@
 
 <head>
     <link rel="stylesheet" href="login.css" />
-
+    <script src="login.js"></script>
     <title>Login</title>
 </head>
 
@@ -12,21 +12,21 @@
 
             <div class="login-div"> 
                 <div class="heading">SignIn</div>
-                <form>
-                    <input type="email" placeholder="Enter Email Address" />
-                    <input type="password" placeholder="Enter Password" />
+                <form onsubmit="logIn()">
+                    <input type="email" placeholder="Enter Email Address" id="login-email"/>
+                    <input type="password" placeholder="Enter Password" id="login-password"/>
                     <button class="button" type="submit">SignIn</button>
                 </form>
                 
             </div>
 
-            <div class="signup-div">
+            <div class="signup-div" >
                 <div class="heading">SignUp</div>
-                <form>
-                    <input type="text" placeholder="Enter Full Name" />
-                    <input type="email" placeholder="Enter Email Address" />
-                    <input type="password" placeholder="Enter Password" />
-                    <input type="password" placeholder="Enter Confirm Password" />
+                <form onsubmit="signUp()">
+                    <input type="text" placeholder="Enter Full Name" id="signup-name"/>
+                    <input type="email" placeholder="Enter Email Address" id="signup-email"/>
+                    <input type="password" placeholder="Enter Password" id="signup-pass"/>
+                    <input type="password" placeholder="Enter Confirm Password" id="signup-Cpass"/>
                     <button class="button" type="submit"> SignUp </button>
                 </form>
             </div>

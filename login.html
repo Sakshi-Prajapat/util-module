@@ -12,17 +12,17 @@
 
             <div class="login-div"> 
                 <div class="heading">SignIn</div>
-                <form onsubmit="logIn()">
+                <form onsubmit="login(event)">
                     <input type="email" placeholder="Enter Email Address" id="login-email"/>
                     <input type="password" placeholder="Enter Password" id="login-password"/>
-                    <button class="button" type="submit">SignIn</button>
+                    <button class="button" >SignIn</button>
                 </form>
                 
             </div>
 
             <div class="signup-div" >
                 <div class="heading">SignUp</div>
-                <form onsubmit="signUp()">
+                <form onsubmit="signUp(event)">
                     <input type="text" placeholder="Enter Full Name" id="signup-name"/>
                     <input type="email" placeholder="Enter Email Address" id="signup-email"/>
                     <input type="password" placeholder="Enter Password" id="signup-pass"/>

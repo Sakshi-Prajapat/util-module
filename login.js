@@ -1,3 +1,7 @@
+
+
+// document.getElementById("hello").innerText="aditya"
+
 function getInputId(id) {
     return document.getElementById(id);
 }
@@ -30,15 +34,27 @@ function login(event)
     event.preventDefault()
     const email = getInputId("login-email")
     const password = getInputId("login-password")
+    const userName= getInputId("signIn-name")
     const user = userData.find((user)=> user.email === email.value)
     console.log(user)
     if(user && user.password === password.value){
         console.log(user.password)
         console.log("login")
-        window.location.replace("./array/arrayMethod.html");
         localStorage.setItem("isLogged", true)
         localStorage.setItem("loginUserData",JSON.stringify(user))
+    
+        window.location.replace("./index.html");
     }else{
         console.log("not")
     }
+}
+
+function handleLoginName(){
+    const isLogged = localStorage.getItem("isLogged")
+
+    
+    if(isLogged){
+            
+    }
+
 }

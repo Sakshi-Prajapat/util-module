@@ -227,8 +227,23 @@ function sortMethod(event) {
     event.preventDefault()
     const enteriesId = getElemtntId("enteriesElement")
     const resultDiv = getElemtntId("enteriesResultDiv")
-    let element = spliceId.value.split(",")
+    let element = enteriesId.value.split(",")
   }
+
+  function flatMethod(event){
+    event.preventDefault()
+    const flatId = getElemtntId("flatElement")
+    const resultDiv = getElemtntId("flatResultDiv")
+    let element = flatId.value.split(",")
+  }
+
+  function indexOfMethod(event){
+    event.preventDefault()
+    const indexOfId = getElemtntId("indexOfElement")
+    const resultDiv = getElemtntId("indexOfResultDiv")
+    let element = flatId.value.split(",")
+  }
+
 function findInputCheck(event) {
     event.preventDefault()
     const arrayRegex = /^[-,0-9]+$/

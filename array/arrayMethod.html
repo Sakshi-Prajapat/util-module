@@ -8,7 +8,7 @@
     <title></title>
 
 </head>
-<style>
+<!-- <style>
     .modal-find-overlay,
     .modal-filter-overlay,
     .modal-map-overlay,
@@ -43,7 +43,7 @@
     .close-modal-btn,
     .close-filter-modal-btn,
     .close-sort-modal-btn,
-    .close-reduce-modal-btn ,.close-slice-modal-btn,.close-enteries-modal-btn,.close-splice-modal-btn {
+    .close-reduce-modal-btn ,.close-slice-modal-btn,.close-enteries-modal-btn,.close-splice-modal-btn ,.close-flat-modal-btn, .close-indexOf-modal-btn{
         font-size: 15px;
         color: black;
         font-size: 30px;
@@ -108,7 +108,7 @@
         text-align: center;
         font-family: 'Nigelina', sans-serif;
     }
-</style>
+</style> -->
 </style>
 
 <body>
@@ -249,13 +249,27 @@
     <div class="modal-map-overlay hide">
         <div class="modal-wrapper">
             <div class="close-btn-wrapper">
-                <button class="close-map-modal-btn">
-                    Close
-                </button>
+                <div class="close-map-modal-btn">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
             </div>
-            <h1>GeeksforGeeks</h1>
+            <h1>Map Method</h1>
             <div class="modal-content">
-                Map
+                <span class="heading">Find the first element in array which is grteater than given number</span>
+                <form onsubmit="mapMethod(event)">
+                    <input type="text" placeholder="Enter inputs for array" id="mapElement"
+                        oninput="mapInputCheck(event)" />
+                    <!-- <input type="text" placeholder="Enter number to find greater number " id="number" /> -->
+                    <span id="findError"></span>
+                    <button type="submit" class="button">Submit</button>
+                </form>
+                <div id="mapResultDiv" style="font-size: 15px;
+    font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+
+                    For Example :- arr = [12,33,4,55,66] , number = 45
+                    <span style="font-size: 20px;">Result :- 55</span>
+
+                </div>
             </div>
         </div>
     </div>
@@ -345,7 +359,8 @@
                     <span id="findError"></span>
                     <button type="submit" class="button">Submit</button>
                 </form>
-                <div id="resduceResultDiv" style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                <div id="resduceResultDiv"
+                    style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
 
                     For Example :- arr = [12,33,4,55,66] , number = 45
                     <span style="font-size: 20px;">Result :- 55</span>
@@ -373,7 +388,8 @@
                     <span id="findError"></span>
                     <button type="submit" class="button">Submit</button>
                 </form>
-                <div id="sliceResultDiv" style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                <div id="sliceResultDiv"
+                    style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
 
                     For Example :- arr = [12,33,4,55,66] , number = 45
                     <span style="font-size: 20px;">Result :- 55</span>
@@ -401,7 +417,8 @@
                     <span id="findError"></span>
                     <button type="submit" class="button">Submit</button>
                 </form>
-                <div id="spliceResultDiv" style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                <div id="spliceResultDiv"
+                    style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
 
                     For Example :- arr = [12,33,4,55,66] , number = 45
                     <span style="font-size: 20px;">Result :- 55</span>
@@ -429,7 +446,8 @@
                     <span id="findError"></span>
                     <button type="submit" class="button">Submit</button>
                 </form>
-                <div id="enteriesResultDiv" style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                <div id="enteriesResultDiv"
+                    style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
 
                     For Example :- arr = [12,33,4,55,66] , number = 45
                     <span style="font-size: 20px;">Result :- 55</span>
@@ -443,13 +461,27 @@
     <div class="modal-flat-overlay hide">
         <div class="modal-wrapper">
             <div class="close-btn-wrapper">
-                <button class="close-flat-modal-btn">
-                    Close
-                </button>
+                <div class="close-flat-modal-btn">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
             </div>
-            <h1>GeeksforGeeks</h1>
+            <h1>Flat Method</h1>
             <div class="modal-content">
-                Flat
+                <span class="heading">Flat</span>
+                <form onsubmit="flatMethod(event)">
+                    <input type="text" placeholder="Enter inputs for array" id="flatElement"
+                        oninput="flatInputCheck(event)" />
+                    <!-- <input type="text" placeholder="Enter number to find greater number " id="number" /> -->
+                    <span id="findError"></span>
+                    <button type="submit" class="button">Submit</button>
+                </form>
+                <div id="flatResultDiv"
+                    style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+
+                    For Example :- arr = [12,33,4,55,66] , number = 45
+                    <span style="font-size: 20px;">Result :- 55</span>
+
+                </div>
             </div>
         </div>
     </div>
@@ -458,13 +490,27 @@
     <div class="modal-indexOf-overlay hide">
         <div class="modal-wrapper">
             <div class="close-btn-wrapper">
-                <button class="close-indexOf-modal-btn">
-                    Close
-                </button>
+                <div class="close-indexOf-modal-btn">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
             </div>
-            <h1>GeeksforGeeks</h1>
+            <h1>Index Of</h1>
             <div class="modal-content">
-                Index Of
+                <span class="heading">Index Of</span>
+                <form onsubmit="indexOFMethod(event)">
+                    <input type="text" placeholder="Enter inputs for array" id="indexOfElement"
+                        oninput="flatInputCheck(event)" />
+                    <!-- <input type="text" placeholder="Enter number to find greater number " id="number" /> -->
+                    <span id="findError"></span>
+                    <button type="submit" class="button">Submit</button>
+                </form>
+                <div id="indexOfResultDiv"
+                    style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+
+                    For Example :- arr = [12,33,4,55,66] , number = 45
+                    <span style="font-size: 20px;">Result :- 55</span>
+
+                </div>
             </div>
         </div>
     </div>

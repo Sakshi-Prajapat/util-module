@@ -195,10 +195,14 @@ function toUpperCaseMethod(event) {
     event.preventDefault()
     const toUpperCaseId = getElemtntId("toUpperCaseString")
     const resultDiv = getElemtntId("toUpperCaseResultDiv")
+    const upperCaseDiv = getElemtntId("upperCase")
+    const LowerCaseDiv = getElemtntId("lowerCase")
     let string = toUpperCaseId.value
     let result = string.toUpperCase()
-
-    resultDiv.textContent = "The New String is :- " + result
+    let result2 = string.toLowerCase()
+    upperCaseDiv.textContent = "The String in UpperCase is :- " + result 
+    LowerCaseDiv.textContent = "The String in LowerCase is :- " + result2
+    resultDiv.textContent = ""
     resultDiv.style.fontSize = 30
 
     toUpperCaseId.value = ""

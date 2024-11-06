@@ -77,7 +77,7 @@ function handlePromiseCheck(){
 function handleCallbackCheck(){
     const isLogged = localStorage.getItem("isLogged")
     if(isLogged){
-        document.location ="./promise/promise.html";
+        document.location ="./callback/callback.html";
     }else{
             alert("Login First")
     }
@@ -86,7 +86,7 @@ function handleCallbackCheck(){
 function handleAsyncAwaitCheck(){
     const isLogged = localStorage.getItem("isLogged")
     if(isLogged){
-        document.location ="./promise/promise.html";
+        document.location ="./async-await/async-await.html";
     }else{
             alert("Login First")
     }

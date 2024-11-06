@@ -1,8 +1,471 @@
 <html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-        <h1>callback</h1>
-    </body>
+
+<head>
+    <link rel="stylesheet" href="./callback.css" />
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.cdnfonts.com/css/nigelina-95312" rel="stylesheet">
+    <title></title>
+
+</head>
+<!-- <style>
+    .modal-length-overlay,
+    .modal-replace-overlay,
+    .modal-concat-overlay,
+    .modal-slice-overlay,
+    .modal-toUpperCase-overlay,
+    .modal-search-overlay,
+    .modal-subString-overlay,
+    .modal-codePointAt-overlay{
+        background: rgba(0, 0, 0, 0.7);
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .modal-wrapper {
+        width: 50%;
+        height: 80%;
+        background: ghostwhite;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 20px;
+    }
+
+    .close-length-modal-btn,
+    .close-replace-modal-btn,
+    .close-concat-modal-btn,
+    .close-toUpperCase-modal-btn ,.close-slice-modal-btn,.close-subString-modal-btn,.close-search-modal-btn ,.close-codePointAt-modal-btn{
+        font-size: 15px;
+        color: black;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .close-btn-wrapper {
+        display: flex;
+        justify-content: end;
+        padding: 20px;
+    }
+
+    .modal-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        height: 50vh;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .modal-content form {
+        height: 55%;
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .modal-content form input {
+        border: 1px solid rgba(31, 27, 29, 0.93);
+        padding: 12px 20px;
+        width: 100%;
+        border-radius: 10px;
+        /* box-sizing: border-box; */
+    }
+
+    .button {
+        background: rgba(31, 27, 29, 0.93);
+        color: #fff;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        text-shadow: none;
+        height: 20%;
+        width: 50%;
+
+    }
+
+    .heading {
+        font-family: 'Nigelina', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    h1 {
+        text-align: center;
+        font-family: 'Nigelina', sans-serif;
+    }
+</style> -->
+
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <span style="color: white; font-size: 40px;">Callback</span>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <!-- <li><a href="./login.html" id="logout">SignUp</a></li> -->
+
+            </ul>
+        </div>
+    </nav>
+    <div class="dashboard-div">
+        <!-- <div class="tile-wrap-container">
+            <div class="tile">
+
+                <span class="tile-title">Length</span>
+                <div class="tile-description">The Length() method returns the length of the string </div>
+                <div class="arrow" id="lengtharrow">
+                    <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+
+            </div>
+            <div class="tile">
+                <span class="tile-title">Replace</span>
+                <div class="tile-description"> It Replace a part of given string with another string.
+                </div>
+                <div class="arrow" id="replacearrow">
+                    <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="tile">
+                <span class="tile-title">Concat</span>
+                <div class="tile-description">It Concat or Joins the two or more strings together</div>
+                <div class="arrow" id="concatrarrow">
+                    <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="tile">
+                <span class="tile-title">Slice</span>
+                <div class="tile-description">It extracts a part of string based on given starting and ending index and
+                    returns a new string </div>
+                <div class="arrow" id="slicearrow">
+                    <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="tile">
+                <span class="tile-title">To Upper Case</span>
+                <div class="tile-description">It returns the string in Upper Case Alphabets.
+                </div>
+                <div class="arrow" id="touppercasearrow">
+                    <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="tile">
+                <span class="tile-title">Search</span>
+                <div class="tile-description">It returns the index of character which matches in the string</div>
+                <div class="arrow" id="searcharrow">
+                    <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="tile">
+                <span class="tile-title">Substring</span>
+                <div class="tile-description">It returns the part of the given string from the start index to the end index
+
+                </div>
+                <div class="arrow" id="substringarrow">
+                    <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="tile">
+                <span class="tile-title">CodePointAt</span>
+                <div class="tile-description">It returns the UniCode of character at given particular index.</div>
+                <div class="arrow" id="codePointAtarrow">
+                    <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <div class="modal-length-overlay hide">
+        <div class="modal-wrapper">
+            <div class="close-btn-wrapper">
+                <div class="close-length-modal-btn">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+            <h1>Length Method </h1>
+            <div class="modal-content">
+                <span class="heading">Find the length of string </span>
+                <form onsubmit="lengthMethod(event)">
+                    <input type="text" placeholder="Enter inputs for array" id="lengthString" oninput="" />
+                    <!-- <input type="text" placeholder="Enter number to find greater number " id="number" /> -->
+                    <span id="findError"></span>
+                    <button type="submit" class="button">Submit</button>
+                </form>
+                <div id="lengthResultDiv" style="font-size: 15px;
+                  font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+
+                    For Example :- str = "helloworld"
+                    <span style="font-size: 20px;">Result :- The length of string is 10</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <div class="modal-replace-overlay hide">
+        <div class="modal-wrapper">
+            <div class="close-btn-wrapper">
+                <div class="close-replace-modal-btn">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+            <h1>Replace Method</h1>
+            <div class="modal-content">
+                <span class="heading">Replace the string ....</span>
+                <form onsubmit="replaceMethod(event)">
+                    <input type="text" placeholder="Enter the String" id="String" oninput="" />
+                    <input type="text" placeholder="Enter a part of string want to change " id="value1" />
+                    <input type="text" placeholder="Enter a string to change" id="value2" />
+                    <span id="findError"></span>
+                    <button type="submit" class="button">Submit</button>
+                </form>
+                <div id="replaceResultDiv" style="font-size: 15px;
+    font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+
+                    For Example :- arr = [12,33,4,55,66] , number = 45
+                    <span style="font-size: 20px;">Result :- 55</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <div class="modal-concat-overlay hide">
+        <div class="modal-wrapper">
+            <div class="close-btn-wrapper">
+                <div class="close-concat-modal-btn">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+            <h1>Concat Method </h1>
+            <div class="modal-content">
+                <span class="heading">Enter String to Concat</span>
+                <form onsubmit="concatMethod(event)">
+                    <input type="text" placeholder="Enter first String" id="string1" oninput="" />
+                    <input type="text" placeholder="Enter second String " id="string2" />
+                    <input type="text" placeholder="Enter third String " id="string3" />
+                    <span id="findError"></span>
+                    <button type="submit" class="button">Submit</button>
+                </form>
+                <div id="concatResultDiv" style="font-size: 15px;
+    font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+
+                    For Example :- str1 = "hello" str2 = "world"
+                    <span style="font-size: 20px;">Concat String is :- "helloworld"</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <div class="modal-slice-overlay hide">
+        <div class="modal-wrapper">
+            <div class="close-btn-wrapper">
+                <div class="close-slice-modal-btn">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+            <h1>Slice Method</h1>
+            <div class="modal-content">
+                <span class="heading">Get the String from the given start or end Index</span>
+                <form onsubmit="sliceMethod(event)">
+                    <input type="text" placeholder="Enter String" id="sliceString" oninput="" /> <span
+                        id="findError"></span>
+                    <input type="text" placeholder="Enter start index" id="startIndex" oninput="" />
+                    <input type="text" placeholder="Enter end index" id="endIndex" oninput="" />
+
+
+                    <button type="submit" class="button">Submit</button>
+                </form>
+                <div id="sliceResultDiv" style="font-size: 15px;
+                font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+
+                    For Example :- String = "helloworld" ,StartIndex = 3 , EndIndex = 7
+                    <span style="font-size: 20px;">Result :- lowo</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <div class="modal-toUpperCase-overlay hide">
+        <div class="modal-wrapper">
+            <div class="close-btn-wrapper">
+                <div class="close-toUpperCase-modal-btn">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+            <h1>Upper Case Method </h1>
+            <div class="modal-content">
+                <span class="heading">Convert String to UpperCase</span>
+                <form onsubmit="toUpperCaseMethod(event)">
+                    <input type="text" placeholder="Enter inputs for String" id="toUpperCaseString" oninput="" />
+                    <!-- <input type="text" placeholder="Enter number to find greater number " id="number" /> -->
+                    <span id="findError"></span>
+                    <button type="submit" class="button">Submit</button>
+                </form>
+                <div id="toUpperCaseResultDiv"
+                    style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+
+                    For Example :- String = "helloworld"
+                    <span style="font-size: 20px;">Result :- "HELLOWORLD"</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <div class="modal-search-overlay hide">
+        <div class="modal-wrapper">
+            <div class="close-btn-wrapper">
+                <div class="close-search-modal-btn">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+            <h1>Search Method</h1>
+            <div class="modal-content">
+                <span class="heading">Find the index of character from the string</span>
+                <form onsubmit="SearchMethod(event)">
+                    <input type="text" placeholder="Enter inputs for String" id="searchString" oninput="" />
+                    <input type="text" placeholder="Enter single character " id="character" />
+                    <span id="findError"></span>
+                    <button type="submit" class="button">Submit</button>
+                </form>
+                <div id="searchResultDiv"
+                    style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+
+                    For Example :- string = "helloworld" character = l
+                    <span style="font-size: 20px;">Result :- 2</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <div class="modal-subString-overlay hide">
+        <div class="modal-wrapper">
+            <div class="close-btn-wrapper">
+                <div class="close-substring-modal-btn">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+            <h1>Substring Method</h1>
+            <div class="modal-content">
+                <span class="heading">Get the part of string from the given string</span>
+                <form onsubmit="subStringMethod(event)">
+                    <input type="text" placeholder="Enter String" id="originalString" oninput="" />
+                    <input type="text" placeholder="Enter start index" id="startIndexStr" oninput="" />
+                    <input type="text" placeholder="Enter end index" id="endIndexStr" oninput="" />
+                    <span id="findError"></span>
+                    <button type="submit" class="button">Submit</button>
+                </form>
+                <div id="subStringResultDiv"
+                    style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+
+                    For Example :- String = "helloworld" , number = 45
+                    <span style="font-size: 20px;">Result :- 55</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <div class="modal-codePointAt-overlay hide">
+        <div class="modal-wrapper">
+            <div class="close-btn-wrapper">
+                <div class="close-codePointAt-modal-btn">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+            <h1>CodePointAt Method</h1>
+            <div class="modal-content">
+                <span class="heading">Find the unicode of the character from the given String</span>
+                <form onsubmit="codePointAtMethod(event)">
+                    <input type="text" placeholder="Enter String" id="codePointAtString" oninput="" />
+                    <input type="text" placeholder="Enter the Index " id="index" />
+
+                    <button type="submit" class="button">Submit</button>
+                </form>
+                <div id="codePointAtResultDiv"
+                    style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+
+                    For Example :- String = "helloworld" , index = 2
+                    <span style="font-size: 20px;">Result :- 108</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay hidden"></div>
+
+
+
+    <div class="footer">
+
+        <div class="footer-container">
+            <div class="footer-first-section">
+                <!-- <div class="footer-text">
+                    Get updates on topics you probably want to know about in your inbox
+                </div>
+                <div>
+                    <form action="">
+                        <input class="input-field" type="text" placeholder="Email Address" />
+                        <button class="sumbit-button"> <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                    </form>
+                </div> -->
+            </div>
+            <div class="footer-second-section">
+                <div class="footer-option">
+                    <span style="font-size: 30px; font-weight: 600 ; margin-bottom: 10px;">Menu</span>
+                    <ul style="display: flex; flex-direction: column; gap: 5px; font-size: 15px;">
+                        <li>About US</li>
+                        <li>Home</li>
+                        <li>Sing In</li>
+                        <li>Sing Up</li>
+                        <li>Community</li>
+
+                    </ul>
+                </div>
+                <div class="footer-option">
+                    <span style="font-size: 30px; font-weight: 600 ; margin-bottom: 10px;">Js Docs</span>
+                    <ul style="display: flex; flex-direction: column; gap: 5px; font-size: 15px;">
+                        <li>About US</li>
+                        <li>Home</li>
+                        <li>Sing In</li>
+                        <li>Sing Up</li>
+                        <li>Community</li>
+                    </ul>
+                </div>
+            </div>
+            <div></div>
+        </div>
+    </div>
+</body>
+<script src="./stringMethod.js">
+
+
+</script>
+
 </html>

@@ -157,8 +157,13 @@
                 </div>
             </div>
             <div class="tile">
-                <span class="tile-title">To Upper Case</span>
-                <div class="tile-description">It returns the string in Upper Case Alphabets.
+                <span class="tile-title">Cases</span>
+                <div class="tile-description">
+                    <span>There are two case mention below :-</span> </br>
+                    <ol>
+                        <li>UpperCase</li><br>
+                        <li>LowerCase</li>
+                    </ol>
                 </div>
                 <div class="arrow" id="touppercasearrow">
                     <i class="fa fa-paw" aria-hidden="true"></i>
@@ -166,15 +171,26 @@
             </div>
             <div class="tile">
                 <span class="tile-title">Search</span>
-                <div class="tile-description">It returns the index of character which matches in the string</div>
+                <div class="tile-description">
+                    <span>It search the character from the string.</span>
+                    <ol>
+                        <li>Search</li><br>
+                        <li>Match</li><br>
+                        <li>MatchAll</li><br>
+                    </ol> 
+                </div>
                 <div class="arrow" id="searcharrow">
                     <i class="fa fa-paw" aria-hidden="true"></i>
                 </div>
             </div>
             <div class="tile">
-                <span class="tile-title">Substring</span>
-                <div class="tile-description">It returns the part of the given string from the start index to the end index
-
+                <span class="tile-title">Trim</span>
+                <div class="tile-description">It trim the spaces from the string.
+                    <ol>
+                        <li>Trim</li><br>
+                        <li>TrimStart</li><br>
+                        <li>TrimEnd</li>
+                    </ol> 
                 </div>
                 <div class="arrow" id="substringarrow">
                     <i class="fa fa-paw" aria-hidden="true"></i>
@@ -329,11 +345,13 @@
                     <span id="findError"></span>
                     <button type="submit" class="button">Submit</button>
                 </form>
-                <div id="toUpperCaseResultDiv"
+                <div 
                     style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                    <div id="upperCase"></div>
+                    <div id="lowerCase"></div>
+                   <div id="toUpperCaseResultDiv"> For Example :- String = "helloworld"
+                    <span style="font-size: 20px;">Result :- "HELLOWORLD"</span> </div>
 
-                    For Example :- String = "helloworld"
-                    <span style="font-size: 20px;">Result :- "HELLOWORLD"</span>
 
                 </div>
             </div>

@@ -48,7 +48,7 @@ li a {
     background-image: url(../asset/background-image.jpg);
     background-size: cover;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
 }
 
 .tile-wrap-container {

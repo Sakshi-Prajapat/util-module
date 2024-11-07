@@ -215,8 +215,8 @@ li a {
         display: flex;
         flex-direction: column;
         padding: 20px;
-        height: 50vh;
-        justify-content: space-evenly;
+        height: 60vh;
+        gap: 10px;
         align-items: center;
     }
 

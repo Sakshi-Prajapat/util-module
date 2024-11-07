@@ -351,11 +351,11 @@
             </div>
             <h1>Reduce Method </h1>
             <div class="modal-content">
-                <span class="heading">Remove duplicate in an array</span>
+                <span class="heading">Calculate the overall Grade of result.</span>
                 <form onsubmit="reduceMethod(event)">
-                    <input type="text" placeholder="Enter inputs for array" id="reduceElement"
+                    <input type="text" placeholder="Enter inputs of Scores" id="reduceElement"
                         oninput="findInputCheck(event)" />
-                    <!-- <input type="text" placeholder="Enter number to find greater number " id="number" /> -->
+                    <input type="text" placeholder="Enter inputs of Weights number " id="weightsNumber" />
                     <span id="findError"></span>
                     <button type="submit" class="button">Submit</button>
                 </form>
@@ -384,7 +384,7 @@
                 <form onsubmit="sliceMethod(event)">
                     <input type="text" placeholder="Enter inputs for array" id="sliceElement"
                         oninput="findInputCheck(event)" />
-                    <!-- <input type="text" placeholder="Enter number to find greater number " id="number" /> -->
+                    <input type="text" placeholder="Enter start and end index " id="indexValue" />
                     <span id="findError"></span>
                     <button type="submit" class="button">Submit</button>
                 </form>
@@ -411,9 +411,10 @@
             <div class="modal-content">
                 <span class="heading">Splice</span>
                 <form onsubmit="spliceMethod(event)">
-                    <input type="text" placeholder="Enter inputs for array" id="spliceElement"
-                        oninput="findInputCheck(event)" />
-                    <!-- <input type="text" placeholder="Enter number to find greater number " id="number" /> -->
+                       <input type="text" placeholder="Enter inputs for array" id="spliceElement"
+                        oninput="" />
+                        <input type="text" placeholder="Enter the index value to change in array " id="indexId" />
+                        <input type="text" placeholder="Enter the inputs for change in array " id="addElement" />
                     <span id="findError"></span>
                     <button type="submit" class="button">Submit</button>
                 </form>

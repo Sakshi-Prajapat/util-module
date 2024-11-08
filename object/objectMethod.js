@@ -1,7 +1,7 @@
 const openObjectButton = document.querySelector("#Objectarrow");
 const openAssignButton = document.querySelector("#Assignarrow");
 const openEntriesButton = document.querySelector("#Entriesrarrow");
-const openFromEntriesButton = document.querySelector("#FromEntriesarrow");
+const openFromEntriesButton = document.querySelector("#fromEntriesarrow");
 const openValuesButton = document.querySelector("#Valuesarrow");
 const openGroupByButton = document.querySelector("#GroupByarrow");
 
@@ -122,96 +122,97 @@ function ObjectMethod(event) {
 
     ObjectId.value = " "
 }
-function AssignMethod(event) {
+function assignMethod(event) {
     event.preventDefault()
-    const AssignId = getElemtntId("String")
-    const value1 = getElemtntId("value1")
-    const value2 = getElemtntId("value2")
+    const targetObject = getElemtntId("targetObject").value
+    const sourceObject = getElemtntId("sourceObject").value
+    // const value2 = getElemtntId("value2")
+    
+    let objectOne= JSON.parse(targetObject)
+    let objectTwo = JSON.parse(sourceObject)
 
-    const resultDiv = getElemtntId("AssignResultDiv")
-    let result = AssignId.value
-    let newString = result.Assign(value1.value, value2.value)
-    console.log(newString)
-
-    resultDiv.textContent = "The New String is :- " + newString
+    const resultDiv = getElemtntId("assignResultDiv")
+    let result = Object.assign(objectOne, objectTwo);
+    let str = JSON.stringify(result);
+    console.log(result)
+    resultDiv.textContent = "The New String is :- " + str
     resultDiv.style.fontSize = 30
 
-    AssignId.value = " "
-    value1.value = " "
-    value2.value = " "
+    targetObject = " "
+    sourceObject = " "
 
 }
 
 function EntriesMethod(event) {
     event.preventDefault();
-    const stringOne = getElemtntId("ObjectElement")
-    const stringTwo = getElemtntId("indexOfObject")
-    // const stringThree = getElemtntId("string3")
+    const objectElement = getElemtntId("objectElement").value
+    const index = getElemtntId("indexOfObject")
     const resultDiv = getElemtntId("EntriesResultDiv")
-    console.log(stringOne)
-    // let string = "'" +stringOne.value+ "'";
-    let string = stringOne.value
-    console.log(string)
-    let object = JSON.parse(string)
-    console.log(object)
-    let result=Object.entries(object)[stringTwo.value]
+    let object= JSON.parse(objectElement)
+    let result=Object.entries(object)[index.value]
+    console.log(result)
     resultDiv.textContent = "The Result is :- " +result
     resultDiv.style.fontSize = 30
 
-    stringOne.value = " "
-    stringTwo.value = " "
+        objectElement = " "
+        index.value = " "
 }
 
-function FromEntriesMethod(event) {
+function fromEntriesMethod(event) {
     event.preventDefault()
-    const FromEntriesString = getElemtntId("FromEntriesString")
-    const startIndex = getElemtntId("startIndex")
-    const endIndex = getElemtntId("endIndex")
-    const resultDiv = getElemtntId("FromEntriesResultDiv")
+    const fromEntriesArray = getElemtntId("fromEntriesId").value
+    // const startIndex = getElemtntId("startIndex")
+    // const endIndex = getElemtntId("endIndex")
+    const resultDiv = getElemtntId("fromEntriesResultDiv")
 
-    let string = FromEntriesString.value
-    let result = string.FromEntries(startIndex.value, endIndex.value)
-    resultDiv.textContent = "The New String is :- " + result
+    // const arr = fromEntriesArray.split(",").map()
+    const arr = JSON.parse(fromEntriesArray)
+    console.log(arr)
+    const result = Object.fromEntries(arr);
+    console.log(result)
+    resultDiv.textContent = "The New String is :- " + JSON.stringify(result)
     resultDiv.style.fontSize = 30
 
-    FromEntriesString.value = " "
-    startIndex.value = " "
-    endIndex.value = " "
+   
 }
 
-function ValuesMethod(event) {
+function valuesMethod(event) {
     event.preventDefault()
-    const ValuesId = getElemtntId("ValuesString")
-    const resultDiv = getElemtntId("ValuesResultDiv")
-    const upperCaseDiv = getElemtntId("upperCase")
-    const LowerCaseDiv = getElemtntId("lowerCase")
-    let string = ValuesId.value
-    let result = string.Values()
-    let result2 = string.toLowerCase()
-    upperCaseDiv.textContent = "The String in UpperCase is :- " + result 
-    LowerCaseDiv.textContent = "The String in LowerCase is :- " + result2
-    resultDiv.textContent = ""
+    const valuesId = getElemtntId("valuesObject").value
+    const resultDiv = getElemtntId("valuesResultDiv")
+   
+    let object= JSON.parse(valuesId)
+    let result = Object.values(object)
+    console.log(result)
+
+
+    resultDiv.textContent = "The result is :- " +JSON.stringify(result)
     resultDiv.style.fontSize = 30
-
-    ValuesId.value = ""
+    console.log(valuesId)
+    valuesId = " "
+    console.log(valuesId)
 }
 
 
 
-function GroupByMethod(event) {
+function groupByMethod(event) {
     event.preventDefault()
-    const GroupById = getElemtntId("GroupByString")
-    const charId = getElemtntId("character")
-    const resultDiv = getElemtntId("GroupByResultDiv")
-    let string = GroupById.value
-    let str = charId.value
+    const groupById = getElemtntId("groupByObject").value
+    const charId = getElemtntId("key")
+    const resultDiv = getElemtntId("groupByResultDiv")
+    
+     
+    let object = JSON.parse(groupById)
+    console.log(object)
+    const groupBy = (charId)=>{
+        return charId;
+    }
 
-    let result = string.GroupBy(str)
+    const result = Object.groupBy(object);
     resultDiv.textContent = "The Index of the character :- " + result
     resultDiv.style.fontSize = 30
 
-    GroupById.value = " "
-    charId.value = " "
+   
 }
 
 // function GroupByMethod(event) {

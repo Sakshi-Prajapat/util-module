@@ -8,12 +8,12 @@ const openGroupByButton = document.querySelector("#GroupByarrow");
 
 
 
-const ObjectModal = document.querySelector(".modal-Object-overlay");
-const AssignModal = document.querySelector(".modal-Assign-overlay");
-const EntriesModal = document.querySelector(".modal-Entries-overlay");
-const FromEntriesModal = document.querySelector(".modal-FromEntries-overlay");
-const ValuesModal = document.querySelector(".modal-Values-overlay");
-const GroupByModal = document.querySelector(".modal-GroupBy-overlay");
+const objectModal = document.querySelector(".modal-Object-overlay");
+const assignModal = document.querySelector(".modal-Assign-overlay");
+const entriesModal = document.querySelector(".modal-Entries-overlay");
+const fromEntriesModal = document.querySelector(".modal-FromEntries-overlay");
+const valuesModal = document.querySelector(".modal-Values-overlay");
+const groupByModal = document.querySelector(".modal-GroupBy-overlay");
 
 
 
@@ -34,70 +34,70 @@ function getElemtntId(id) {
 function closeObjectModal(e, clickedOutside) {
     if (clickedOutside) {
         if (e.target.classList.contains("modal-Object-overlay"))
-            ObjectModal.classList.add("hide");
-    } else ObjectModal.classList.add("hide");
+            objectModal.classList.add("hide");
+    } else objectModal.classList.add("hide");
 }
 
 function closeAssignModal(e, clickedOutside) {
     if (clickedOutside) {
         if (e.target.classList.contains("modal-Assign-overlay"))
-            AssignModal.classList.add("hide");
-    } else AssignModal.classList.add("hide");
+            assignModal.classList.add("hide");
+    } else assignModal.classList.add("hide");
 }
 
 function closeEntriesModal(e, clickedOutside) {
     if (clickedOutside) {
         if (e.target.classList.contains("modal-Entries-overlay"))
-            EntriesModal.classList.add("hide");
-    } else EntriesModal.classList.add("hide");
+            entriesModal.classList.add("hide");
+    } else entriesModal.classList.add("hide");
 }
 
 function closeFromEntriesModal(e, clickedOutside) {
     if (clickedOutside) {
         if (e.target.classList.contains("modal-FromEntries-overlay"))
-            FromEntriesModal.classList.add("hide");
-    } else FromEntriesModal.classList.add("hide");
+            fromEntriesModal.classList.add("hide");
+    } else fromEntriesModal.classList.add("hide");
 }
 
 function closeValuesModal(e, clickedOutside) {
     if (clickedOutside) {
         if (e.target.classList.contains("modal-Values-overlay"))
-            ValuesModal.classList.add("hide");
-    } else ValuesModal.classList.add("hide");
+            valuesModal.classList.add("hide");
+    } else valuesModal.classList.add("hide");
 }
 
 function closeGroupByModal(e, clickedOutside) {
     if (clickedOutside) {
         if (e.target.classList.contains("modal-GroupBy-overlay"))
-            GroupByModal.classList.add("hide");
-    } else GroupByModal.classList.add("hide");
+            groupByModal.classList.add("hide");
+    } else groupByModal.classList.add("hide");
 }
 
 
 
 
-openObjectButton.addEventListener("click", () => { ObjectModal.classList.remove("hide"); });
-ObjectModal.addEventListener("click", (e) => closeObjectModal(e, true));
+openObjectButton.addEventListener("click", () => { objectModal.classList.remove("hide"); });
+objectModal.addEventListener("click", (e) => closeObjectModal(e, true));
 closeObjectBtn.addEventListener("click", closeObjectModal);
 
-openAssignButton.addEventListener("click", () => { AssignModal.classList.remove("hide"); });
-AssignModal.addEventListener("click", (e) => closeAssignModal(e, true));
+openAssignButton.addEventListener("click", () => { assignModal.classList.remove("hide"); });
+assignModal.addEventListener("click", (e) => closeAssignModal(e, true));
 closeAssignBtn.addEventListener("click", closeAssignModal);
 
-openEntriesButton.addEventListener("click", () => { EntriesModal.classList.remove("hide"); });
-EntriesModal.addEventListener("click", (e) => closeEntriesModal(e, true));
+openEntriesButton.addEventListener("click", () => { entriesModal.classList.remove("hide"); });
+entriesModal.addEventListener("click", (e) => closeEntriesModal(e, true));
 closeEntriesBtn.addEventListener("click", closeEntriesModal);
 
-openFromEntriesButton.addEventListener("click", () => { FromEntriesModal.classList.remove("hide"); });
-FromEntriesModal.addEventListener("click", (e) => closeFromEntriesModal(e, true));
+openFromEntriesButton.addEventListener("click", () => { fromEntriesModal.classList.remove("hide"); });
+fromEntriesModal.addEventListener("click", (e) => closeFromEntriesModal(e, true));
 closeFromEntriesBtn.addEventListener("click", closeFromEntriesModal);
 
-openValuesButton.addEventListener("click", () => { ValuesModal.classList.remove("hide"); });
-ValuesModal.addEventListener("click", (e) => closeValuesModal(e, true));
+openValuesButton.addEventListener("click", () => { valuesModal.classList.remove("hide"); });
+valuesModal.addEventListener("click", (e) => closeValuesModal(e, true));
 closeValuesBtn.addEventListener("click", closeValuesModal);
 
-openGroupByButton.addEventListener("click", () => { GroupByModal.classList.remove("hide"); });
-GroupByModal.addEventListener("click", (e) => closeGroupByModal(e, true));
+openGroupByButton.addEventListener("click", () => { groupByModal.classList.remove("hide"); });
+groupByModal.addEventListener("click", (e) => closeGroupByModal(e, true));
 closeGroupByBtn.addEventListener("click", closeGroupByModal);
 
 
@@ -105,7 +105,7 @@ closeGroupByBtn.addEventListener("click", closeGroupByModal);
 
 
 
-function ObjectMethod(event) {
+function objectMethod(event) {
     event.preventDefault()
     const ObjectId = getElemtntId("ObjectKey")
     const ValueId = getElemtntId("ObjectValue")
@@ -143,7 +143,7 @@ function assignMethod(event) {
 
 }
 
-function EntriesMethod(event) {
+function entriesMethod(event) {
     event.preventDefault();
     const objectElement = getElemtntId("objectElement").value
     const index = getElemtntId("indexOfObject")
@@ -207,6 +207,23 @@ function groupByMethod(event) {
     const groupBy = (charId)=>{
         return charId;
     }
+
+    const products = [
+        { name: 'apples', category: 'fruits' },
+        { name: 'oranges', category: 'fruits' },
+        { name: 'potatoes', category: 'vegetables' }
+    ];
+    
+    // const grouped = products.reduce((acc, product) => {
+    //     const key = product.category;
+    //     if (!acc[key]) {
+    //         acc[key] = [];
+    //     }
+    //     acc[key].push(product);
+    //     return acc;
+    // }, {});
+    
+    // console.log(grouped);
 
     const result = Object.groupBy(object);
     resultDiv.textContent = "The Index of the character :- " + result

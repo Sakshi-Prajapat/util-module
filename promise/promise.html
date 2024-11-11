@@ -8,15 +8,11 @@
     <title></title>
 
 </head>
-<!-- <style>
-    .modal-length-overlay,
-    .modal-replace-overlay,
-    .modal-concat-overlay,
-    .modal-slice-overlay,
-    .modal-toUpperCase-overlay,
-    .modal-search-overlay,
-    .modal-subString-overlay,
-    .modal-codePointAt-overlay{
+<style>
+    .modal-promiseAll-overlay,
+    .modal-promiseAny-overlay,
+    .modal-promiseRace-overlay,
+    .modal-promiseAllSettle-overlay{
         background: rgba(0, 0, 0, 0.7);
         width: 100%;
         height: 100vh;
@@ -38,10 +34,11 @@
         border-radius: 20px;
     }
 
-    .close-length-modal-btn,
-    .close-replace-modal-btn,
-    .close-concat-modal-btn,
-    .close-toUpperCase-modal-btn ,.close-slice-modal-btn,.close-subString-modal-btn,.close-search-modal-btn ,.close-codePointAt-modal-btn{
+    .close-promiseAll-modal-btn,
+    .close-promiseAny-modal-btn,
+    .close-promiseRace-modal-btn,
+    .close-promiseAllSettle-modal-btn
+     {
         font-size: 15px;
         color: black;
         font-size: 30px;
@@ -59,9 +56,10 @@
         display: flex;
         flex-direction: column;
         padding: 20px;
-        height: 50vh;
+        height: 60vh;
         justify-content: space-evenly;
         align-items: center;
+        padding: 20px;
     }
 
     .modal-content form {
@@ -78,7 +76,7 @@
         padding: 12px 20px;
         width: 100%;
         border-radius: 10px;
-        /* box-sizing: border-box; */
+        
     }
 
     .button {
@@ -106,7 +104,7 @@
         text-align: center;
         font-family: 'Nigelina', sans-serif;
     }
-</style> -->
+</style>
 
 
 <body>
@@ -123,36 +121,45 @@
         </div>
     </nav>
     <div class="dashboard-div">
-        <!-- <div class="tile-wrap-container">
+        <div class="tile-wrap-container">
             <div class="tile">
 
-                <span class="tile-title">Length</span>
-                <div class="tile-description">The Length() method returns the length of the string </div>
-                <div class="arrow" id="lengtharrow">
+                <span class="tile-title">Promise All</span>
+                <div class="tile-description">It returns promise when all the inputs promise fulfill </div>
+                <div class="arrow" id="promiseAllarrow">
                     <i class="fa fa-paw" aria-hidden="true"></i>
                 </div>
 
             </div>
             <div class="tile">
-                <span class="tile-title">Replace</span>
-                <div class="tile-description"> It Replace a part of given string with another string.
+                <span class="tile-title">Promise Any</span>
+                <div class="tile-description"> It returns promise when any of the inputs promise fulfill
                 </div>
-                <div class="arrow" id="replacearrow">
+                <div class="arrow" id="promiseAnyarrow">
                     <i class="fa fa-paw" aria-hidden="true"></i>
                 </div>
             </div>
             <div class="tile">
-                <span class="tile-title">Concat</span>
-                <div class="tile-description">It Concat or Joins the two or more strings together</div>
-                <div class="arrow" id="concatrarrow">
+                <span class="tile-title">Promise Race</span>
+                <div class="tile-description">It returns promise which settels first</div>
+                <div class="arrow" id="promiseRacearrow">
                     <i class="fa fa-paw" aria-hidden="true"></i>
                 </div>
             </div>
+
             <div class="tile">
-                <span class="tile-title">Slice</span>
+                <span class="tile-title">Promise AllSettled</span>
+                <div class="tile-description">It returns the value and status of promise either fullfill or reject</div>
+                <div class="arrow" id="promiseAllSettlearrow">
+                    <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+            </div>
+
+            <!-- <div class="tile">
+                <span class="tile-title">promiseAllSettle</span>
                 <div class="tile-description">It extracts a part of string based on given starting and ending index and
                     returns a new string </div>
-                <div class="arrow" id="slicearrow">
+                <div class="arrow" id="promiseAllSettlearrow">
                     <i class="fa fa-paw" aria-hidden="true"></i>
                 </div>
             </div>
@@ -186,52 +193,66 @@
                 <div class="arrow" id="codePointAtarrow">
                     <i class="fa fa-paw" aria-hidden="true"></i>
                 </div>
-            </div>
-        </div> -->
+            </div>-->
+        </div>
     </div>
 
-    <div class="modal-length-overlay hide">
+    <div class="modal-promiseAll-overlay hide">
         <div class="modal-wrapper">
             <div class="close-btn-wrapper">
-                <div class="close-length-modal-btn">
+                <div class="close-promiseAll-modal-btn">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
             </div>
-            <h1>Length Method </h1>
+            <h1>Promise All Method </h1>
             <div class="modal-content">
-                <span class="heading">Find the length of string </span>
+                <!-- <span class="heading">Find the length of string </span>
                 <form onsubmit="lengthMethod(event)">
-                    <input type="text" placeholder="Enter inputs for array" id="lengthString"
-                        oninput="" />
-                    <!-- <input type="text" placeholder="Enter number to find greater number " id="number" /> -->
+                    <input type="text" placeholder="Enter inputs for array" id="lengthString" oninput="" />
+                     <input type="text" placeholder="Enter number to find greater number " id="number" /> 
                     <span id="findError"></span>
                     <button type="submit" class="button">Submit</button>
-                </form>
-                <div id="lengthResultDiv" style="font-size: 15px;
+                </form> -->
+                <!-- <div id="lengthResultDiv" style="font-size: 15px;
     font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
 
                     For Example :- str = "helloworld"
                     <span style="font-size: 20px;">Result :- The length of string is 10</span>
 
+                </div> -->
+                <div><b>Defination :- </b><span>It takes an iterable of promise and returns a single promise when all the
+                    promises fullfill.</span></div>
+               <div style=" width: 100%;"><b>Example :- </b></div> 
+                <div  style="display: flex; text-align: left; width: 80%; height: 100px; background-color: black; padding: 15px; font-size: 18px; color: #fff; border-radius: 4px;">
+                    const promise1 = Promise.resolve(3);
+                    const promise2 = 42;
+                    const promise3 = new Promise((resolve, reject) => {
+                    setTimeout(resolve, 100, 'foo');
+                    });
+
+                    Promise.all([promise1, promise2, promise3]).then((values) => {
+                    console.log(values);
+                    });
                 </div>
+                <div style="display: flex; align-items: start; width: 100%;"><b>Result :- </b></div>
+                <div style="width: 80%; height: 80px; background-color: black; padding: 5px; font-size: 18px; color: #fff; border-radius: 4px;">Array [3, 42, "foo"]</div>
             </div>
         </div>
     </div>
     <div class="overlay hidden"></div>
 
-    <div class="modal-replace-overlay hide">
+    <div class="modal-promiseAny-overlay hide">
         <div class="modal-wrapper">
             <div class="close-btn-wrapper">
-                <div class="close-replace-modal-btn">
+                <div class="close-promiseAny-modal-btn">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
             </div>
-            <h1>Replace Method</h1>
+            <h1>Promise Any Method</h1>
             <div class="modal-content">
                 <span class="heading">Replace the string ....</span>
                 <form onsubmit="replaceMethod(event)">
-                    <input type="text" placeholder="Enter the String" id="String"
-                        oninput="" />
+                    <input type="text" placeholder="Enter the String" id="String" oninput="" />
                     <input type="text" placeholder="Enter a part of string want to change " id="value1" />
                     <input type="text" placeholder="Enter a string to change" id="value2" />
                     <span id="findError"></span>
@@ -249,29 +270,28 @@
     </div>
     <div class="overlay hidden"></div>
 
-    <div class="modal-concat-overlay hide">
+    <div class="modal-promiseRace-overlay hide">
         <div class="modal-wrapper">
             <div class="close-btn-wrapper">
-                <div class="close-concat-modal-btn">
+                <div class="close-promiseRace-modal-btn">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
             </div>
-            <h1>Concat Method </h1>
+            <h1>Promise Race Method </h1>
             <div class="modal-content">
-                <span class="heading">Enter String to Concat</span>
-                <form onsubmit="concatMethod(event)">
-                    <input type="text" placeholder="Enter first String" id="string1"
-                        oninput="" />
-                        <input type="text" placeholder="Enter second String " id="string2" />
-                        <input type="text" placeholder="Enter third String " id="string3" />
+                <span class="heading">Enter String to promiseRace</span>
+                <form onsubmit="promiseRaceMethod(event)">
+                    <input type="text" placeholder="Enter first String" id="string1" oninput="" />
+                    <input type="text" placeholder="Enter second String " id="string2" />
+                    <input type="text" placeholder="Enter third String " id="string3" />
                     <span id="findError"></span>
                     <button type="submit" class="button">Submit</button>
                 </form>
-                <div id="concatResultDiv" style="font-size: 15px;
+                <div id="promiseRaceResultDiv" style="font-size: 15px;
     font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
 
                     For Example :- str1 = "hello" str2 = "world"
-                    <span style="font-size: 20px;">Concat String is  :- "helloworld"</span>
+                    <span style="font-size: 20px;">promiseRace String is :- "helloworld"</span>
 
                 </div>
             </div>
@@ -279,32 +299,30 @@
     </div>
     <div class="overlay hidden"></div>
 
-    <div class="modal-slice-overlay hide">
+    <div class="modal-promiseAllSettle-overlay hide">
         <div class="modal-wrapper">
             <div class="close-btn-wrapper">
-                <div class="close-slice-modal-btn">
+                <div class="close-promiseAllSettle-modal-btn">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
             </div>
-            <h1>Slice Method</h1>
+            <h1>Promise AllSettle Method</h1>
             <div class="modal-content">
                 <span class="heading">Get the String from the given start or end Index</span>
-                <form onsubmit="sliceMethod(event)">
-                    <input type="text" placeholder="Enter String" id="sliceString"
-                        oninput="" /> <span id="findError"></span>
-                        <input type="text" placeholder="Enter start index" id="startIndex"
-                        oninput="" />
-                        <input type="text" placeholder="Enter end index" id="endIndex"
-                        oninput="" />
+                <form onsubmit="promiseAllSettleMethod(event)">
+                    <input type="text" placeholder="Enter String" id="promiseAllSettleString" oninput="" /> <span
+                        id="findError"></span>
+                    <input type="text" placeholder="Enter start index" id="startIndex" oninput="" />
+                    <input type="text" placeholder="Enter end index" id="endIndex" oninput="" />
 
 
                     <button type="submit" class="button">Submit</button>
                 </form>
-                <div id="sliceResultDiv" style="font-size: 15px;
+                <div id="promiseAllSettleResultDiv" style="font-size: 15px;
                 font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
 
-                    For Example :- String = "helloworld" ,StartIndex = 3 , EndIndex = 7 
-                     <span style="font-size: 20px;">Result :- lowo</span>
+                    For Example :- String = "helloworld" ,StartIndex = 3 , EndIndex = 7
+                    <span style="font-size: 20px;">Result :- lowo</span>
 
                 </div>
             </div>
@@ -323,8 +341,7 @@
             <div class="modal-content">
                 <span class="heading">Convert String to UpperCase</span>
                 <form onsubmit="toUpperCaseMethod(event)">
-                    <input type="text" placeholder="Enter inputs for String" id="toUpperCaseString"
-                        oninput="" />
+                    <input type="text" placeholder="Enter inputs for String" id="toUpperCaseString" oninput="" />
                     <!-- <input type="text" placeholder="Enter number to find greater number " id="number" /> -->
                     <span id="findError"></span>
                     <button type="submit" class="button">Submit</button>
@@ -352,8 +369,7 @@
             <div class="modal-content">
                 <span class="heading">Find the index of character from the string</span>
                 <form onsubmit="SearchMethod(event)">
-                    <input type="text" placeholder="Enter inputs for String" id="searchString"
-                        oninput="" />
+                    <input type="text" placeholder="Enter inputs for String" id="searchString" oninput="" />
                     <input type="text" placeholder="Enter single character " id="character" />
                     <span id="findError"></span>
                     <button type="submit" class="button">Submit</button>
@@ -381,12 +397,9 @@
             <div class="modal-content">
                 <span class="heading">Get the part of string from the given string</span>
                 <form onsubmit="subStringMethod(event)">
-                    <input type="text" placeholder="Enter String" id="originalString"
-                        oninput="" /> 
-                        <input type="text" placeholder="Enter start index" id="startIndexStr"
-                        oninput="" />
-                        <input type="text" placeholder="Enter end index" id="endIndexStr"
-                        oninput="" />
+                    <input type="text" placeholder="Enter String" id="originalString" oninput="" />
+                    <input type="text" placeholder="Enter start index" id="startIndexStr" oninput="" />
+                    <input type="text" placeholder="Enter end index" id="endIndexStr" oninput="" />
                     <span id="findError"></span>
                     <button type="submit" class="button">Submit</button>
                 </form>
@@ -413,10 +426,9 @@
             <div class="modal-content">
                 <span class="heading">Find the unicode of the character from the given String</span>
                 <form onsubmit="codePointAtMethod(event)">
-                    <input type="text" placeholder="Enter String" id="codePointAtString"
-                        oninput="" />
+                    <input type="text" placeholder="Enter String" id="codePointAtString" oninput="" />
                     <input type="text" placeholder="Enter the Index " id="index" />
-                    
+
                     <button type="submit" class="button">Submit</button>
                 </form>
                 <div id="codePointAtResultDiv"
@@ -474,7 +486,7 @@
         </div>
     </div>
 </body>
-<script src="./stringMethod.js">
+<script src="./promiseMethod.js">
 
 
 </script>

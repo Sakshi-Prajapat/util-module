@@ -126,7 +126,6 @@ function assignMethod(event) {
     event.preventDefault()
     const targetObject = getElemtntId("targetObject").value
     const sourceObject = getElemtntId("sourceObject").value
-    // const value2 = getElemtntId("value2")
     
     let objectOne= JSON.parse(targetObject)
     let objectTwo = JSON.parse(sourceObject)

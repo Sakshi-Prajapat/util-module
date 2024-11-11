@@ -1,12 +1,12 @@
-const openObjectButton = document.querySelector("#Objectarrow");
+const openApiCallButton = document.querySelector("#ApiCallArrow");
 const openAssignButton = document.querySelector("#Assignarrow");
 const openEntriesButton = document.querySelector("#Entriesrarrow");
 
-const objectModal = document.querySelector(".modal-Object-overlay");
+const apiCallModal = document.querySelector(".modal-ApiCall-overlay");
 const assignModal = document.querySelector(".modal-Assign-overlay");
 const entriesModal = document.querySelector(".modal-Entries-overlay");
 
-const closeObjectBtn = document.querySelector(".close-Object-modal-btn");
+const closeApiCallBtn = document.querySelector(".close-ApiCall-modal-btn");
 const closeAssignBtn = document.querySelector(".close-Assign-modal-btn");
 const closeEntriesBtn = document.querySelector(".close-Entries-modal-btn");
 
@@ -14,11 +14,11 @@ function getElemtntId(id) {
     return document.getElementById(id);
 }
 
-function closeObjectModal(e, clickedOutside) {
+function closeApiCallModal(e, clickedOutside) {
     if (clickedOutside) {
-        if (e.target.classList.contains("modal-Object-overlay"))
-            objectModal.classList.add("hide");
-    } else objectModal.classList.add("hide");
+        if (e.target.classList.contains("modal-ApiCall-overlay"))
+            apiCallModal.classList.add("hide");
+    } else apiCallModal.classList.add("hide");
 }
 
 function closeAssignModal(e, clickedOutside) {
@@ -35,9 +35,9 @@ function closeEntriesModal(e, clickedOutside) {
     } else entriesModal.classList.add("hide");
 }
 
-openObjectButton.addEventListener("click", () => { objectModal.classList.remove("hide"); });
-objectModal.addEventListener("click", (e) => closeObjectModal(e, true));
-closeObjectBtn.addEventListener("click", closeObjectModal);
+openApiCallButton.addEventListener("click", () => { apiCallModal.classList.remove("hide"); });
+apiCallModal.addEventListener("click", (e) => closeApiCallModal(e, true));
+closeApiCallBtn.addEventListener("click", closeApiCallModal);
 
 openAssignButton.addEventListener("click", () => { assignModal.classList.remove("hide"); });
 assignModal.addEventListener("click", (e) => closeAssignModal(e, true));
@@ -58,3 +58,21 @@ closeEntriesBtn.addEventListener("click", closeEntriesModal);
 //         console.error("Error fetching products:", error);
 //       }
 // }
+
+async function apiCallMethod(event){
+    event.preventDefault()
+    let data;
+    const url = getElemtntId("ApiCallUrl").value
+    const div = getElemtntId("ApiCallResultDiv")
+    try{
+        const response = await fetch(url)
+        data = await response.json();
+        console.log(data);
+    }catch(error){
+        console.error('Error fetching data:', error);
+    }
+    div.textContent = JSON.stringify(data)
+    div.style.padding = "8px"
+    div.style.width= "70%"
+    div.style.overflow = "scroll"
+}

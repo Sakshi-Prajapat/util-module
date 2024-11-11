@@ -226,18 +226,24 @@ function SearchMethod(event) {
     charId.value = " "
 }
 
-function subStringMethod(event) {
+function trimMethod(event) {
     event.preventDefault()
-    const String = getElemtntId("originalString")
-    const startIndex = getElemtntId("startIndexStr")
-    const endIndex = getElemtntId("endIndexStr")
-    const resultDiv = getElemtntId("subStringResultDiv")
+    const String = getElemtntId("originalString").value
+    const trimStart = getElemtntId("trimStart").value
+    const trimEnd = getElemtntId("trimEnd").value
+    const trimDiv = getElemtntId("trimDiv")
+    const trimStartDiv = getElemtntId("trimStartDiv")
+    const trimEndDiv = getElemtntId("trimEndDiv")
+    const trimSection = getElemtntId("subStringResultDiv")
 
-    let str = String.value
-    let result = str.substring(startIndex.value, endIndex.value)
+    let trimResult = String.trim()
+    let trimStartResult = trimStart.trimStart()
+    let trimEndResult = trimEnd.trimEnd()
 
-    resultDiv.textContent = "The new String :- " + result
-    resultDiv.style.fontSize = 30
+    trimDiv.textContent = "The result is :-" +trimResult
+    trimStartDiv.textContent = "The result is :-" +trimStartResult
+    trimEndDiv.textContent = "The result is :-" +trimEndResult
+    trimSection.textContent = " "
     String.value =" "
     startIndex.value= " "
     endIndex.value= " "

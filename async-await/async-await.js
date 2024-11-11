@@ -46,3 +46,15 @@ closeAssignBtn.addEventListener("click", closeAssignModal);
 openEntriesButton.addEventListener("click", () => { entriesModal.classList.remove("hide"); });
 entriesModal.addEventListener("click", (e) => closeEntriesModal(e, true));
 closeEntriesBtn.addEventListener("click", closeEntriesModal);
+
+// async function fetchData(){
+//     try {
+//         const response = await fetch("https://fakestoreapi.com/products");
+//         if (!response.ok) {
+//           throw new Error("Network response was not ok");
+//         }
+//         const products = await response.json();
+//       } catch (error) {
+//         console.error("Error fetching products:", error);
+//       }
+// }

@@ -12,7 +12,7 @@
     .modal-promiseAll-overlay,
     .modal-promiseAny-overlay,
     .modal-promiseRace-overlay,
-    .modal-promiseAllSettle-overlay{
+    .modal-promiseAllSettle-overlay {
         background: rgba(0, 0, 0, 0.7);
         width: 100%;
         height: 100vh;
@@ -37,8 +37,7 @@
     .close-promiseAll-modal-btn,
     .close-promiseAny-modal-btn,
     .close-promiseRace-modal-btn,
-    .close-promiseAllSettle-modal-btn
-     {
+    .close-promiseAllSettle-modal-btn {
         font-size: 15px;
         color: black;
         font-size: 30px;
@@ -57,7 +56,7 @@
         flex-direction: column;
         padding: 20px;
         height: 60vh;
-        justify-content: space-evenly;
+        gap: 20px;
         align-items: center;
         padding: 20px;
     }
@@ -76,7 +75,7 @@
         padding: 12px 20px;
         width: 100%;
         border-radius: 10px;
-        
+
     }
 
     .button {
@@ -220,10 +219,12 @@
                     <span style="font-size: 20px;">Result :- The length of string is 10</span>
 
                 </div> -->
-                <div><b>Defination :- </b><span>It takes an iterable of promise and returns a single promise when all the
-                    promises fullfill.</span></div>
-               <div style=" width: 100%;"><b>Example :- </b></div> 
-                <div  style="display: flex; text-align: left; width: 80%; height: 100px; background-color: black; padding: 15px; font-size: 18px; color: #fff; border-radius: 4px;">
+                <div><b>Defination :- </b><span>It takes an iterable of promise and returns a single promise when all
+                        the
+                        promises fullfill.</span></div>
+                <div style=" width: 100%;"><b>Example :- </b></div>
+                <div
+                    style="display: flex; text-align: left; width: 80%; height: 100px; background-color: black; padding: 15px; font-size: 18px; color: #fff; border-radius: 4px;">
                     const promise1 = Promise.resolve(3);
                     const promise2 = 42;
                     const promise3 = new Promise((resolve, reject) => {
@@ -235,7 +236,9 @@
                     });
                 </div>
                 <div style="display: flex; align-items: start; width: 100%;"><b>Result :- </b></div>
-                <div style="width: 80%; height: 80px; background-color: black; padding: 5px; font-size: 18px; color: #fff; border-radius: 4px;">Array [3, 42, "foo"]</div>
+                <div
+                    style="width: 80%; height: 80px; background-color: black; padding: 5px; font-size: 18px; color: #fff; border-radius: 4px;">
+                    Array [3, 42, "foo"]</div>
             </div>
         </div>
     </div>
@@ -250,7 +253,7 @@
             </div>
             <h1>Promise Any Method</h1>
             <div class="modal-content">
-                <span class="heading">Replace the string ....</span>
+                <!-- <span class="heading">Replace the string ....</span>
                 <form onsubmit="replaceMethod(event)">
                     <input type="text" placeholder="Enter the String" id="String" oninput="" />
                     <input type="text" placeholder="Enter a part of string want to change " id="value1" />
@@ -264,7 +267,24 @@
                     For Example :- arr = [12,33,4,55,66] , number = 45
                     <span style="font-size: 20px;">Result :- 55</span>
 
+                </div> -->
+                <div style="padding: 10px;"><b>Defination :- </b><span>It takes an iterable of promise and returns a single promise when any of
+                        the promises fullfill. promises fullfill.</span></div>
+                <div style=" width: 100%;"><b>Example :- </b></div>
+                <div
+                    style="display: flex; text-align: left; width: 80%; height: 100px; background-color: black; padding: 15px; font-size: 18px; color: #fff; border-radius: 4px;">
+                    const promise1 = Promise.reject(0);
+                    const promise2 = new Promise((resolve) => setTimeout(resolve, 100, 'quick'));
+                    const promise3 = new Promise((resolve) => setTimeout(resolve, 500, 'slow'));
+
+                    const promises = [promise1, promise2, promise3];
+
+                    Promise.any(promises).then((value) => console.log(value));
                 </div>
+                <div style="display: flex; align-items: start; width: 100%;"><b>Result :- </b></div>
+                <div
+                    style="width: 80%; height: 80px; background-color: black; padding: 5px; font-size: 18px; color: #fff; border-radius: 4px;">
+                    "quick"</div>
             </div>
         </div>
     </div>
@@ -279,7 +299,7 @@
             </div>
             <h1>Promise Race Method </h1>
             <div class="modal-content">
-                <span class="heading">Enter String to promiseRace</span>
+                <!-- <span class="heading">Enter String to promiseRace</span>
                 <form onsubmit="promiseRaceMethod(event)">
                     <input type="text" placeholder="Enter first String" id="string1" oninput="" />
                     <input type="text" placeholder="Enter second String " id="string2" />
@@ -293,7 +313,29 @@
                     For Example :- str1 = "hello" str2 = "world"
                     <span style="font-size: 20px;">promiseRace String is :- "helloworld"</span>
 
+                </div> -->
+                <div style="padding: 15px;"><b>Defination :- </b><span>It takes an iterable of promise and returns a single promise which
+                        compete first among all the proises</span></div>
+                <div style=" width: 100%;"><b>Example :- </b></div>
+                <div
+                    style="display: flex; text-align: left; width: 80%; height: 100px; background-color: black; padding: 15px; font-size: 18px; color: #fff; border-radius: 4px;">
+                    const promise1 = new Promise((resolve, reject) => {
+                    setTimeout(resolve, 500, 'one');
+                    });
+
+                    const promise2 = new Promise((resolve, reject) => {
+                    setTimeout(resolve, 100, 'two');
+                    });
+
+                    Promise.race([promise1, promise2]).then((value) => {
+                    console.log(value);
+                    // Both resolve, but promise2 is faster
+                    });
                 </div>
+                <div style="display: flex; align-items: start; width: 100%;"><b>Result :- </b></div>
+                <div
+                    style="width: 80%; height: 80px; background-color: black; padding: 5px; font-size: 18px; color: #fff; border-radius: 4px;">
+                    "two"</div>
             </div>
         </div>
     </div>
@@ -308,7 +350,7 @@
             </div>
             <h1>Promise AllSettle Method</h1>
             <div class="modal-content">
-                <span class="heading">Get the String from the given start or end Index</span>
+                <!-- <span class="heading">Get the String from the given start or end Index</span>
                 <form onsubmit="promiseAllSettleMethod(event)">
                     <input type="text" placeholder="Enter String" id="promiseAllSettleString" oninput="" /> <span
                         id="findError"></span>
@@ -324,7 +366,43 @@
                     For Example :- String = "helloworld" ,StartIndex = 3 , EndIndex = 7
                     <span style="font-size: 20px;">Result :- lowo</span>
 
+                </div> -->
+                <div style="padding: 5px;"><b>Defination :- </b><span>It takes an iterable of promise and returns an array of object with
+                        status and value when all the promise settle</span></div>
+                <div style=" width: 100%;"><b>Example :- </b></div>
+                <div
+                    style="display: flex; text-align: left; width: 80%; height: 100px; background-color: black; padding: 15px; font-size: 18px; color: #fff; border-radius: 4px; overflow: scroll;">
+                    const promiseOne = new Promise(function (resolve, reject) {
+                    const x = 1;
+                    const y = 1;
+                    if (x === y) {
+                    resolve(4);
+                    } else {
+                    reject();
+                    }
+                    });
+
+                    const promiseTwo = Promise.reject(5)
+                    const promiseThree = new Promise((resolve,)=>{
+                    setTimeout(
+                    ()=>{
+                    resolve("hello")
+                    },100
+                    )
+                    })
+                    let promises = [promiseOne,promiseTwo,promiseThree]
+                    Promise.allSettled(promises).then((results) =>
+                    console.log("all Settled" ,results)
+                    );
                 </div>
+                <div style="display: flex; align-items: start; width: 100%;"><b>Result :- </b></div>
+                <div
+                    style="width: 80%; height: 80px; background-color: black; padding: 5px; font-size: 18px; color: #fff; border-radius: 4px;">
+                    all Settled [
+                    { status: 'fulfilled', value: 4 },
+                    { status: 'rejected', reason: 5 },
+                    { status: 'fulfilled', value: 'hello' }
+                    ]</div>
             </div>
         </div>
     </div>
@@ -339,10 +417,10 @@
             </div>
             <h1>Upper Case Method </h1>
             <div class="modal-content">
-                <span class="heading">Convert String to UpperCase</span>
+                <!-- <span class="heading">Convert String to UpperCase</span>
                 <form onsubmit="toUpperCaseMethod(event)">
                     <input type="text" placeholder="Enter inputs for String" id="toUpperCaseString" oninput="" />
-                    <!-- <input type="text" placeholder="Enter number to find greater number " id="number" /> -->
+                    <input type="text" placeholder="Enter number to find greater number " id="number" />
                     <span id="findError"></span>
                     <button type="submit" class="button">Submit</button>
                 </form>
@@ -352,7 +430,7 @@
                     For Example :- String = "helloworld"
                     <span style="font-size: 20px;">Result :- "HELLOWORLD"</span>
 
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

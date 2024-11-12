@@ -194,59 +194,65 @@ function valuesMethod(event) {
 
 
 
-function groupByMethod(event) {
-    event.preventDefault()
-    const groupById = getElemtntId("groupByObject").value
-    const charId = getElemtntId("key")
-    const resultDiv = getElemtntId("groupByResultDiv")
+// function groupByMethod(event) {
+//     event.preventDefault()
+//     const groupById = getElemtntId("groupByObject").value
+//     const charId = getElemtntId("key")
+//     const resultDiv = getElemtntId("groupByResultDiv")
     
      
-    let object = JSON.parse(groupById)
-    console.log(object)
-    const groupBy = (charId)=>{
-        return charId;
-    }
+//     let object = JSON.parse(groupById)
+//     console.log(object)
+//     const groupBy = (charId)=>{
+//         return charId;
+//     }
 
-    const products = [
-        { name: 'apples', category: 'fruits' },
-        { name: 'oranges', category: 'fruits' },
-        { name: 'potatoes', category: 'vegetables' }
-    ];
+//     const products = [
+//         { name: 'apples', category: 'fruits' },
+//         { name: 'oranges', category: 'fruits' },
+//         { name: 'potatoes', category: 'vegetables' }
+//     ];
     
-    // const grouped = products.reduce((acc, product) => {
-    //     const key = product.category;
-    //     if (!acc[key]) {
-    //         acc[key] = [];
-    //     }
-    //     acc[key].push(product);
-    //     return acc;
-    // }, {});
+//     // const grouped = products.reduce((acc, product) => {
+//     //     const key = product.category;
+//     //     if (!acc[key]) {
+//     //         acc[key] = [];
+//     //     }
+//     //     acc[key].push(product);
+//     //     return acc;
+//     // }, {});
     
-    // console.log(grouped);
+//     // console.log(grouped);
 
-    const result = Object.groupBy(object);
-    resultDiv.textContent = "The Index of the character :- " + result
-    resultDiv.style.fontSize = 30
+//     const result = Object.groupBy(object);
+//     resultDiv.textContent = "The Index of the character :- " + result
+//     resultDiv.style.fontSize = 30
 
    
-}
-
-// function GroupByMethod(event) {
-//     event.preventDefault()
-//     const String = getElemtntId("originalString")
-//     const startIndex = getElemtntId("startIndexStr")
-//     const endIndex = getElemtntId("endIndexStr")
-//     const resultDiv = getElemtntId("GroupByResultDiv")
-
-//     let str = String.value
-//     let result = str.GroupBy(startIndex.value, endIndex.value)
-
-//     resultDiv.textContent = "The new String :- " + result
-//     resultDiv.style.fontSize = 30
-//     String.value =" "
-//     startIndex.value= " "
-//     endIndex.value= " "
 // }
+
+function groupByMethod(event) {
+    event.preventDefault()
+    const obj = {
+        name : "ram",
+        age : 23
+    }
+    const nameValue = getElemtntId("groupByObject").value
+    // const startIndex = getElemtntId("startIndexStr")
+    // const endIndex = getElemtntId("endIndexStr")
+    const resultDiv = getElemtntId("GroupByResultDiv")
+
+    // let str = String.value
+    // let result = str.GroupBy(startIndex.value, endIndex.value)
+
+    const result = Object.keys(obj).find(key => obj[key].includes(age));
+    console.log(result)
+    resultDiv.textContent = "The new String :- " + result
+    resultDiv.style.fontSize = 30
+    String.value =" "
+    startIndex.value= " "
+    endIndex.value= " "
+}
 
 // function codePointAtMethod(event) {
 //     event.preventDefault()

@@ -56,7 +56,7 @@ li a {
     width: 80%;
     height: 70vh;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     top: 15%;
 }
@@ -135,7 +135,6 @@ li a {
 
 .footer-first-section {
     width: 50%;
-    /* background-color: aquamarine; */
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -163,7 +162,7 @@ li a {
     padding: 20px;
 }
 
-.modal-find-overlay,
+/* .modal-find-overlay,
     .modal-filter-overlay,
     .modal-map-overlay,
     .modal-sort-overlay,
@@ -234,7 +233,7 @@ li a {
         padding: 12px 20px;
         width: 100%;
         border-radius: 10px;
-        /* box-sizing: border-box; */
+        
     }
 
     .button {
@@ -261,4 +260,4 @@ li a {
     h1 {
         text-align: center;
         font-family: 'Nigelina', sans-serif;
-    }
+    } */

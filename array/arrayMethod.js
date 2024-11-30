@@ -164,6 +164,7 @@ function findMethod(event) {
    
     findId.value = " "
 }
+
 function filterMethod(event) {
     event.preventDefault()
     const filterId = getElemtntId("filterElement")
@@ -205,22 +206,48 @@ function sortMethod(event) {
   function reduceMethod(event){
     event.preventDefault()
     const reduceId = getElemtntId("reduceElement")
-    const resultDiv = getElemtntId("reduceResultDiv")
-    let element = reduceId.value.split(",")
+    const weightsId = getElemtntId("weightsNumber")
+    const resultDiv = getElemtntId("resduceResultDiv")
+    let score = reduceId.value.split(",");
+    let weights = weightsId.value.split(",")
+    console.log(weights)
+    const result = score.reduce((sum,score,i)=>{
+       return sum+score*weights[i]
+    },0)
+    console.log(result)
+
+    resultDiv.textContent = "The result is :-" + result
+    resultDiv.style.fontSize = 30
   }
 
   function sliceMethod(event){
     event.preventDefault()
     const sliceId = getElemtntId("sliceElement")
+    const indexId = getElemtntId("indexValue")
     const resultDiv = getElemtntId("sliceResultDiv")
     let element = sliceId.value.split(",")
+    let index = indexId.value.split(",")
+
+    let result = element.slice(index[0], index[1]);
+    resultDiv.textContent = "The result is :-" +result
+    resultDiv.style.fontSize = 30
   }
 
   function spliceMethod(event){
     event.preventDefault()
     const spliceId = getElemtntId("spliceElement")
+    const indexID = getElemtntId("indexId")
+    const newValue = getElemtntId("addElement")
     const resultDiv = getElemtntId("spliceResultDiv")
     let element = spliceId.value.split(",")
+    let index = indexID.value.split(",")
+    let value = newValue.value.split(",")
+
+     element.splice(index[0],index[1] , value[0],value[1])
+     console.log(element)
+
+    resultDiv.textContent = "The result is :-" +element
+    resultDiv.style.fontSize = 30
   }
 
   function enteriesMethod(event){
@@ -228,20 +255,39 @@ function sortMethod(event) {
     const enteriesId = getElemtntId("enteriesElement")
     const resultDiv = getElemtntId("enteriesResultDiv")
     let element = enteriesId.value.split(",")
+    let entries = element.entries();
+    let result = Array.from(entries)
+    
+    
+        resultDiv.textContent = "The result is :-" +result
+    resultDiv.style.fontSize = 30
+
+    console.log(result)
   }
 
   function flatMethod(event){
     event.preventDefault()
-    const flatId = getElemtntId("flatElement")
+    const flatIndex = getElemtntId("depthIndex").value
+    const flatId = getElemtntId("flatElement").value
     const resultDiv = getElemtntId("flatResultDiv")
-    let element = flatId.value.split(",")
+    let element = JSON.parse(flatId)
+    let result = element.flat(flatIndex)
+    console.log(result)
+    resultDiv.textContent = "The result is :-" +result
+    resultDiv.style.fontSize = 30
+
   }
 
   function indexOfMethod(event){
     event.preventDefault()
-    const indexOfId = getElemtntId("indexOfElement")
+    const indexOfId = getElemtntId("indexOfElement").value
+    const value = getElemtntId("indexItem").value
     const resultDiv = getElemtntId("indexOfResultDiv")
-    let element = flatId.value.split(",")
+    let array = indexOfId.split(",")
+    let result = array.indexOf(value)
+    console.log(result)
+    resultDiv.textContent = "The index of the item is :-" +result
+    resultDiv.style.fontSize = 30
   }
 
 function findInputCheck(event) {
@@ -263,4 +309,3 @@ function findInputCheck(event) {
         isNameValid = true;
     }
 }
-

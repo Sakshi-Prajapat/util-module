@@ -8,108 +8,7 @@
     <title></title>
 
 </head>
-<!-- <style>
-    .modal-find-overlay,
-    .modal-filter-overlay,
-    .modal-map-overlay,
-    .modal-sort-overlay,
-    .modal-reduce-overlay,
-    .modal-slice-overlay,
-    .modal-splice-overlay,
-    .modal-flat-overlay,
-    .modal-enteries-overlay,
-    .modal-indexOf-overlay{
-        background: rgba(0, 0, 0, 0.7);
-        width: 100%;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
 
-    .modal-wrapper {
-        width: 50%;
-        height: 80%;
-        background: ghostwhite;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 20px;
-    }
-
-    .close-modal-btn,
-    .close-filter-modal-btn,
-    .close-sort-modal-btn,
-    .close-reduce-modal-btn ,.close-slice-modal-btn,.close-enteries-modal-btn,.close-splice-modal-btn ,.close-flat-modal-btn, .close-indexOf-modal-btn{
-        font-size: 15px;
-        color: black;
-        font-size: 30px;
-        cursor: pointer;
-    }
-
-    .close-btn-wrapper {
-        display: flex;
-        justify-content: end;
-        padding: 20px;
-    }
-
-    .modal-content {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-        height: 50vh;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-
-    .modal-content form {
-        height: 50%;
-        display: flex;
-        flex-direction: column;
-        width: 400px;
-        gap: 15px;
-        align-items: center;
-    }
-
-    .modal-content form input {
-        border: 1px solid rgba(31, 27, 29, 0.93);
-        padding: 12px 20px;
-        width: 100%;
-        border-radius: 10px;
-        /* box-sizing: border-box; */
-    }
-
-    .button {
-        background: rgba(31, 27, 29, 0.93);
-        color: #fff;
-        border: 1px solid #eee;
-        border-radius: 10px;
-        text-shadow: none;
-        height: 20%;
-        width: 50%;
-
-    }
-
-    .heading {
-        font-family: 'Nigelina', sans-serif;
-        font-size: 20px;
-        font-weight: 600;
-    }
-
-    .hide {
-        display: none;
-    }
-
-    h1 {
-        text-align: center;
-        font-family: 'Nigelina', sans-serif;
-    }
-</style> -->
-</style>
 
 <body>
     <nav>
@@ -351,11 +250,11 @@
             </div>
             <h1>Reduce Method </h1>
             <div class="modal-content">
-                <span class="heading">Remove duplicate in an array</span>
+                <span class="heading">Calculate the overall Grade of result.</span>
                 <form onsubmit="reduceMethod(event)">
-                    <input type="text" placeholder="Enter inputs for array" id="reduceElement"
+                    <input type="text" placeholder="Enter inputs of Scores" id="reduceElement"
                         oninput="findInputCheck(event)" />
-                    <!-- <input type="text" placeholder="Enter number to find greater number " id="number" /> -->
+                    <input type="text" placeholder="Enter inputs of Weights number " id="weightsNumber" />
                     <span id="findError"></span>
                     <button type="submit" class="button">Submit</button>
                 </form>
@@ -384,7 +283,7 @@
                 <form onsubmit="sliceMethod(event)">
                     <input type="text" placeholder="Enter inputs for array" id="sliceElement"
                         oninput="findInputCheck(event)" />
-                    <!-- <input type="text" placeholder="Enter number to find greater number " id="number" /> -->
+                    <input type="text" placeholder="Enter start and end index " id="indexValue" />
                     <span id="findError"></span>
                     <button type="submit" class="button">Submit</button>
                 </form>
@@ -411,9 +310,10 @@
             <div class="modal-content">
                 <span class="heading">Splice</span>
                 <form onsubmit="spliceMethod(event)">
-                    <input type="text" placeholder="Enter inputs for array" id="spliceElement"
-                        oninput="findInputCheck(event)" />
-                    <!-- <input type="text" placeholder="Enter number to find greater number " id="number" /> -->
+                       <input type="text" placeholder="Enter inputs for array" id="spliceElement"
+                        oninput="" />
+                        <input type="text" placeholder="Enter the index value to change in array " id="indexId" />
+                        <input type="text" placeholder="Enter the inputs for change in array " id="addElement" />
                     <span id="findError"></span>
                     <button type="submit" class="button">Submit</button>
                 </form>
@@ -469,9 +369,9 @@
             <div class="modal-content">
                 <span class="heading">Flat</span>
                 <form onsubmit="flatMethod(event)">
-                    <input type="text" placeholder="Enter inputs for array" id="flatElement"
-                        oninput="flatInputCheck(event)" />
-                    <!-- <input type="text" placeholder="Enter number to find greater number " id="number" /> -->
+                    <input type="text" placeholder="Enter the subarray" id="flatElement"
+                        oninput="" />
+                    <input type="text" placeholder="Enter the specific depth  " id="depthIndex" />
                     <span id="findError"></span>
                     <button type="submit" class="button">Submit</button>
                 </form>
@@ -497,10 +397,10 @@
             <h1>Index Of</h1>
             <div class="modal-content">
                 <span class="heading">Index Of</span>
-                <form onsubmit="indexOFMethod(event)">
+                <form onsubmit="indexOfMethod(event)">
                     <input type="text" placeholder="Enter inputs for array" id="indexOfElement"
-                        oninput="flatInputCheck(event)" />
-                    <!-- <input type="text" placeholder="Enter number to find greater number " id="number" /> -->
+                        oninput="" />
+                    <input type="text" placeholder="Enter element value for index  " id="indexItem" />
                     <span id="findError"></span>
                     <button type="submit" class="button">Submit</button>
                 </form>

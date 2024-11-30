@@ -8,15 +8,15 @@
     <title></title>
 
 </head>
-<!-- <style>
-    .modal-length-overlay,
-    .modal-replace-overlay,
-    .modal-concat-overlay,
+<style>
+    .modal-Callback-overlay,
+    .modal-callbackHell-overlay,
+    .modal-asyncAwait-overlay,
     .modal-slice-overlay,
-    .modal-toUpperCase-overlay,
+    .modal-promise-overlay,
     .modal-search-overlay,
     .modal-subString-overlay,
-    .modal-codePointAt-overlay{
+    .modal-codePointAt-overlay {
         background: rgba(0, 0, 0, 0.7);
         width: 100%;
         height: 100vh;
@@ -38,10 +38,14 @@
         border-radius: 20px;
     }
 
-    .close-length-modal-btn,
-    .close-replace-modal-btn,
-    .close-concat-modal-btn,
-    .close-toUpperCase-modal-btn ,.close-slice-modal-btn,.close-subString-modal-btn,.close-search-modal-btn ,.close-codePointAt-modal-btn{
+    .close-Callback-modal-btn,
+    .close-callbackHell-modal-btn,
+    .close-asyncAwait-modal-btn,
+    .close-promise-modal-btn,
+    .close-slice-modal-btn,
+    .close-subString-modal-btn,
+    .close-search-modal-btn,
+    .close-codePointAt-modal-btn {
         font-size: 15px;
         color: black;
         font-size: 30px;
@@ -51,17 +55,16 @@
     .close-btn-wrapper {
         display: flex;
         justify-content: end;
-        padding: 20px;
+        padding: 20px 20px 0px 0px;
     }
 
     .modal-content {
-        width: 100%;
+        width: 94%;
         display: flex;
         flex-direction: column;
         padding: 20px;
         height: 50vh;
-        justify-content: space-evenly;
-        align-items: center;
+        gap: 15px;
     }
 
     .modal-content form {
@@ -106,7 +109,7 @@
         text-align: center;
         font-family: 'Nigelina', sans-serif;
     }
-</style> -->
+</style>
 
 
 <body>
@@ -123,94 +126,65 @@
         </div>
     </nav>
     <div class="dashboard-div">
-        <!-- <div class="tile-wrap-container">
+        <div class="tile-wrap-container">
             <div class="tile">
 
-                <span class="tile-title">Length</span>
-                <div class="tile-description">The Length() method returns the length of the string </div>
-                <div class="arrow" id="lengtharrow">
+                <span class="tile-title">Callback</span>
+                <div class="tile-description">The Callback() method returns the Callback of the string </div>
+                <div class="arrow" id="Callbackarrow">
                     <i class="fa fa-paw" aria-hidden="true"></i>
                 </div>
 
             </div>
             <div class="tile">
-                <span class="tile-title">Replace</span>
-                <div class="tile-description"> It Replace a part of given string with another string.
+                <span class="tile-title">Callback Hell</span>
+                <div class="tile-description"> Callback Hell is a multiple callback nested in a function and make a
+                    complex code to execute. Now we understand it from real time example
                 </div>
-                <div class="arrow" id="replacearrow">
+                <div class="arrow" id="CallbackHellarrow">
                     <i class="fa fa-paw" aria-hidden="true"></i>
                 </div>
             </div>
             <div class="tile">
-                <span class="tile-title">Concat</span>
-                <div class="tile-description">It Concat or Joins the two or more strings together</div>
-                <div class="arrow" id="concatrarrow">
+                <span class="tile-title">Use Promise to Escape Callback Hell</span>
+                <div class="tile-description">Using Promise it can chain asynchronous function together for readable
+                    code</div>
+                <div class="arrow" id="promisearrow">
                     <i class="fa fa-paw" aria-hidden="true"></i>
                 </div>
             </div>
             <div class="tile">
-                <span class="tile-title">Slice</span>
-                <div class="tile-description">It extracts a part of string based on given starting and ending index and
-                    returns a new string </div>
-                <div class="arrow" id="slicearrow">
+                <span class="tile-title">Use AsyncAwait to Escape Callback Hell</span>
+                <div class="tile-description">It make asynchronous code to more synchronus for readibility and
+                    functionality</div>
+                <div class="arrow" id="asyncAwaitarrow">
                     <i class="fa fa-paw" aria-hidden="true"></i>
                 </div>
             </div>
-            <div class="tile">
-                <span class="tile-title">To Upper Case</span>
-                <div class="tile-description">It returns the string in Upper Case Alphabets.
-                </div>
-                <div class="arrow" id="touppercasearrow">
-                    <i class="fa fa-paw" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="tile">
-                <span class="tile-title">Search</span>
-                <div class="tile-description">It returns the index of character which matches in the string</div>
-                <div class="arrow" id="searcharrow">
-                    <i class="fa fa-paw" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="tile">
-                <span class="tile-title">Substring</span>
-                <div class="tile-description">It returns the part of the given string from the start index to the end index
-
-                </div>
-                <div class="arrow" id="substringarrow">
-                    <i class="fa fa-paw" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="tile">
-                <span class="tile-title">CodePointAt</span>
-                <div class="tile-description">It returns the UniCode of character at given particular index.</div>
-                <div class="arrow" id="codePointAtarrow">
-                    <i class="fa fa-paw" aria-hidden="true"></i>
-                </div>
-            </div>
-        </div> -->
+        </div>
     </div>
 
-    <div class="modal-length-overlay hide">
+    <div class="modal-Callback-overlay hide">
         <div class="modal-wrapper">
             <div class="close-btn-wrapper">
-                <div class="close-length-modal-btn">
+                <div class="close-Callback-modal-btn">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
             </div>
-            <h1>Length Method </h1>
+            <h1>Callback Method </h1>
             <div class="modal-content">
-                <span class="heading">Find the length of string </span>
-                <form onsubmit="lengthMethod(event)">
-                    <input type="text" placeholder="Enter inputs for array" id="lengthString" oninput="" />
+                <span class="heading">Find the Callback of string </span>
+                <form onsubmit="CallbackMethod(event)">
+                    <input type="text" placeholder="Enter inputs for array" id="CallbackString" oninput="" />
                     <!-- <input type="text" placeholder="Enter number to find greater number " id="number" /> -->
                     <span id="findError"></span>
                     <button type="submit" class="button">Submit</button>
                 </form>
-                <div id="lengthResultDiv" style="font-size: 15px;
+                <div id="CallbackResultDiv" style="font-size: 15px;
                   font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
 
                     For Example :- str = "helloworld"
-                    <span style="font-size: 20px;">Result :- The length of string is 10</span>
+                    <span style="font-size: 20px;">Result :- The Callback of string is 10</span>
 
                 </div>
             </div>
@@ -218,179 +192,125 @@
     </div>
     <div class="overlay hidden"></div>
 
-    <div class="modal-replace-overlay hide">
+    <div class="modal-callbackHell-overlay hide">
         <div class="modal-wrapper">
             <div class="close-btn-wrapper">
-                <div class="close-replace-modal-btn">
+                <div class="close-callbackHell-modal-btn">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
             </div>
-            <h1>Replace Method</h1>
+            <h1>callbackHell Method</h1>
             <div class="modal-content">
-                <span class="heading">Replace the string ....</span>
-                <form onsubmit="replaceMethod(event)">
-                    <input type="text" placeholder="Enter the String" id="String" oninput="" />
-                    <input type="text" placeholder="Enter a part of string want to change " id="value1" />
-                    <input type="text" placeholder="Enter a string to change" id="value2" />
-                    <span id="findError"></span>
-                    <button type="submit" class="button">Submit</button>
-                </form>
-                <div id="replaceResultDiv" style="font-size: 15px;
-    font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                <div style="font-family: 'Nigelina', sans-serif; font-weight: 500; font-size: 18px;">Meet Mr. Callback
+                    Bob, a JavaScript developer with a penchant for getting himself into sticky
+                    situations.
+                    Bob’s task for the day is to make a series of asynchronous calls to fetch data from a fictitious API
+                    called “Dad Joke Central.”
+                    He wants to fetch a random dad joke, translate it into another language, and then post it to a
+                    website.
+                    Bob starts off with good intentions but ends up in Callback Hell:</div>
+                <div
+                    style="background-color: black; border-radius: 10px; color: #fff; padding: 10px; line-height: 30px;">
+                    fetchRandomJoke((joke) => {
+                    console.log(joke);
 
-                    For Example :- arr = [12,33,4,55,66] , number = 45
-                    <span style="font-size: 20px;">Result :- 55</span>
+                    translateJoke(joke, (translatedJoke) => {
+                    console.log(translatedJoke);
 
+                    postJoke(translatedJoke, () => {
+                    console.log("Joke posted successfully!");
+                    });
+                    });
+                    });
+                </div>
+                <div style="font-family: 'Nigelina', sans-serif; font-weight: 500; font-size: 18px;">
+                    Poor Bob! 🙂
+                    He’s now stuck in a deep pit of callbacks, and his code looks like a staircase to nowhere.😄
+                    The readability of the code has gone out the window, and Bob’s sanity is hanging by a thread.😅
                 </div>
             </div>
         </div>
     </div>
     <div class="overlay hidden"></div>
 
-    <div class="modal-concat-overlay hide">
+    <div class="modal-promise-overlay hide">
         <div class="modal-wrapper">
             <div class="close-btn-wrapper">
-                <div class="close-concat-modal-btn">
+                <div class="close-promise-modal-btn">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
             </div>
-            <h1>Concat Method </h1>
+            <h1>Use Promise to Handle Callback Hell</h1>
             <div class="modal-content">
-                <span class="heading">Enter String to Concat</span>
-                <form onsubmit="concatMethod(event)">
-                    <input type="text" placeholder="Enter first String" id="string1" oninput="" />
-                    <input type="text" placeholder="Enter second String " id="string2" />
-                    <input type="text" placeholder="Enter third String " id="string3" />
-                    <span id="findError"></span>
-                    <button type="submit" class="button">Submit</button>
-                </form>
-                <div id="concatResultDiv" style="font-size: 15px;
-    font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
-
-                    For Example :- str1 = "hello" str2 = "world"
-                    <span style="font-size: 20px;">Concat String is :- "helloworld"</span>
-
+                <div style="font-family: 'Nigelina', sans-serif; font-weight: 500; font-size: 18px;">Meet Mr. Callback
+                    Promises are a JavaScript feature that can help Bob untangle his code. With promises, he can chain
+                    asynchronous operations together and use “then” and “catch” methods to make the code more
+                    readable…👩‍💻</div>
+                <div
+                    style="background-color: black; border-radius: 10px; color: #fff; padding: 10px; line-height: 30px;">
+                    fetchRandomJoke()
+                    .then((joke) => {
+                    console.log(joke);
+                    return translateJoke(joke);
+                    })
+                    .then((translatedJoke) => {
+                    console.log(translatedJoke);
+                    return postJoke(translatedJoke);
+                    })
+                    .then(() => {
+                    console.log("Joke posted successfully!");
+                    })
+                    .catch((error) => {
+                    console.error("Something went wrong:", error);
+                    });
+                </div>
+                <div style="font-family: 'Nigelina', sans-serif; font-weight: 500; font-size: 18px;">
                 </div>
             </div>
         </div>
     </div>
     <div class="overlay hidden"></div>
 
-    <div class="modal-slice-overlay hide">
+
+
+    <div class="modal-asyncAwait-overlay hide">
         <div class="modal-wrapper">
             <div class="close-btn-wrapper">
-                <div class="close-slice-modal-btn">
+                <div class="close-asyncAwait-modal-btn">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
             </div>
-            <h1>Slice Method</h1>
+            <h1>Use Async-Await to Handle Promise </h1>
             <div class="modal-content">
-                <span class="heading">Get the String from the given start or end Index</span>
-                <form onsubmit="sliceMethod(event)">
-                    <input type="text" placeholder="Enter String" id="sliceString" oninput="" /> <span
-                        id="findError"></span>
-                    <input type="text" placeholder="Enter start index" id="startIndex" oninput="" />
-                    <input type="text" placeholder="Enter end index" id="endIndex" oninput="" />
+                <div style="font-family: 'Nigelina', sans-serif; font-weight: 500; font-size: 18px;">Bob can also enlist
+                    the help of async/await, a newer JavaScript feature that makes asynchronous code look almost
+                    synchronous with better error-handling capabilities: 😎</div>
+                <div
+                    style="background-color: black; border-radius: 10px; color: #fff; padding: 10px; line-height: 30px;">
+                    async function tellJoke() {
+                    try {
+                    const joke = await fetchRandomJoke();
+                    console.log(joke);
 
+                    const translatedJoke = await translateJoke(joke);
+                    console.log(translatedJoke);
 
-                    <button type="submit" class="button">Submit</button>
-                </form>
-                <div id="sliceResultDiv" style="font-size: 15px;
-                font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                    await postJoke(translatedJoke);
+                    console.log("Joke Translated & posted successfully!");
+                    } catch (error) {
+                    console.error("Something went wrong:", error);
+                    }
+                    };
 
-                    For Example :- String = "helloworld" ,StartIndex = 3 , EndIndex = 7
-                    <span style="font-size: 20px;">Result :- lowo</span>
-
+                    tellJoke();
+                </div>
+                <div style="font-family: 'Nigelina', sans-serif; font-weight: 500; font-size: 18px;">
                 </div>
             </div>
         </div>
     </div>
     <div class="overlay hidden"></div>
 
-    <div class="modal-toUpperCase-overlay hide">
-        <div class="modal-wrapper">
-            <div class="close-btn-wrapper">
-                <div class="close-toUpperCase-modal-btn">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </div>
-            </div>
-            <h1>Upper Case Method </h1>
-            <div class="modal-content">
-                <span class="heading">Convert String to UpperCase</span>
-                <form onsubmit="toUpperCaseMethod(event)">
-                    <input type="text" placeholder="Enter inputs for String" id="toUpperCaseString" oninput="" />
-                    <!-- <input type="text" placeholder="Enter number to find greater number " id="number" /> -->
-                    <span id="findError"></span>
-                    <button type="submit" class="button">Submit</button>
-                </form>
-                <div id="toUpperCaseResultDiv"
-                    style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
-
-                    For Example :- String = "helloworld"
-                    <span style="font-size: 20px;">Result :- "HELLOWORLD"</span>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="overlay hidden"></div>
-
-    <div class="modal-search-overlay hide">
-        <div class="modal-wrapper">
-            <div class="close-btn-wrapper">
-                <div class="close-search-modal-btn">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </div>
-            </div>
-            <h1>Search Method</h1>
-            <div class="modal-content">
-                <span class="heading">Find the index of character from the string</span>
-                <form onsubmit="SearchMethod(event)">
-                    <input type="text" placeholder="Enter inputs for String" id="searchString" oninput="" />
-                    <input type="text" placeholder="Enter single character " id="character" />
-                    <span id="findError"></span>
-                    <button type="submit" class="button">Submit</button>
-                </form>
-                <div id="searchResultDiv"
-                    style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
-
-                    For Example :- string = "helloworld" character = l
-                    <span style="font-size: 20px;">Result :- 2</span>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="overlay hidden"></div>
-
-    <div class="modal-subString-overlay hide">
-        <div class="modal-wrapper">
-            <div class="close-btn-wrapper">
-                <div class="close-substring-modal-btn">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </div>
-            </div>
-            <h1>Substring Method</h1>
-            <div class="modal-content">
-                <span class="heading">Get the part of string from the given string</span>
-                <form onsubmit="subStringMethod(event)">
-                    <input type="text" placeholder="Enter String" id="originalString" oninput="" />
-                    <input type="text" placeholder="Enter start index" id="startIndexStr" oninput="" />
-                    <input type="text" placeholder="Enter end index" id="endIndexStr" oninput="" />
-                    <span id="findError"></span>
-                    <button type="submit" class="button">Submit</button>
-                </form>
-                <div id="subStringResultDiv"
-                    style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
-
-                    For Example :- String = "helloworld" , number = 45
-                    <span style="font-size: 20px;">Result :- 55</span>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="overlay hidden"></div>
 
     <div class="modal-codePointAt-overlay hide">
         <div class="modal-wrapper">
@@ -463,7 +383,7 @@
         </div>
     </div>
 </body>
-<script src="./stringMethod.js">
+<script src="./callback.js">
 
 
 </script>

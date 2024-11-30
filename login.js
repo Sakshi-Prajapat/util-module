@@ -46,6 +46,7 @@ function login(event)
         window.location.replace("./index.html");
     }else{
         console.log("not")
+        alert("password not matched")
     }
 }
 

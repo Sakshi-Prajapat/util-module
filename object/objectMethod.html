@@ -8,15 +8,15 @@
     <title></title>
 
 </head>
-<!-- <style>
-    .modal-length-overlay,
+<style>
+    .modal-Object-overlay,
     .modal-replace-overlay,
-    .modal-concat-overlay,
-    .modal-slice-overlay,
-    .modal-toUpperCase-overlay,
-    .modal-search-overlay,
-    .modal-subString-overlay,
-    .modal-codePointAt-overlay{
+    .modal-Entries-overlay,
+    .modal-FromEntries-overlay,
+    .modal-Values-overlay,
+    .modal-Object-overlay,
+    .modal-assign-overlay,
+    .modal-GroupBy-overlay {
         background: rgba(0, 0, 0, 0.7);
         width: 100%;
         height: 100vh;
@@ -40,8 +40,12 @@
 
     .close-length-modal-btn,
     .close-replace-modal-btn,
-    .close-concat-modal-btn,
-    .close-toUpperCase-modal-btn ,.close-slice-modal-btn,.close-subString-modal-btn,.close-search-modal-btn ,.close-codePointAt-modal-btn{
+    .close-Entries-modal-btn,
+    .close-Values-modal-btn,
+    .close-FromEntries-modal-btn,
+    .close-assign-modal-btn,
+    .close-Object-modal-btn,
+    .close-GroupBy-modal-btn {
         font-size: 15px;
         color: black;
         font-size: 30px;
@@ -78,7 +82,7 @@
         padding: 12px 20px;
         width: 100%;
         border-radius: 10px;
-        /* box-sizing: border-box; */
+
     }
 
     .button {
@@ -106,7 +110,7 @@
         text-align: center;
         font-family: 'Nigelina', sans-serif;
     }
-</style> -->
+</style>
 
 
 <body>
@@ -126,239 +130,75 @@
         <div class="tile-wrap-container">
             <div class="tile">
 
-                <span class="tile-title">Length</span>
-                <div class="tile-description">The Length() method returns the length of the string </div>
-                <div class="arrow" id="lengtharrow">
+                <span class="tile-title">Object</span>
+                <div class="tile-description">It stores value in key value pair.You can create object by providing key
+                    and value in input field</div>
+                <div class="arrow" id="Objectarrow">
                     <i class="fa fa-paw" aria-hidden="true"></i>
                 </div>
 
             </div>
             <div class="tile">
-                <span class="tile-title">Replace</span>
+                <span class="tile-title">Enteries</span>
+                <div class="tile-description">The entry method returns an array and also return array of object at
+                    particular index </div>
+                <div class="arrow" id="Entriesrarrow">
+                    <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="tile">
+                <span class="tile-title">Assign</span>
                 <div class="tile-description"> It Replace a part of given string with another string.
                 </div>
-                <div class="arrow" id="replacearrow">
+                <div class="arrow" id="assignarrow">
                     <i class="fa fa-paw" aria-hidden="true"></i>
                 </div>
             </div>
             <div class="tile">
-                <span class="tile-title">Concat</span>
-                <div class="tile-description">It Concat or Joins the two or more strings together</div>
-                <div class="arrow" id="concatrarrow">
+                <span class="tile-title">FromEntries</span>
+                <div class="tile-description">The fromEntries() method creates an object from a list of key/value pairs.
+                </div>
+                <div class="arrow" id="fromEntriesarrow">
                     <i class="fa fa-paw" aria-hidden="true"></i>
                 </div>
             </div>
             <div class="tile">
-                <span class="tile-title">Slice</span>
+                <span class="tile-title">Values</span>
+                <div class="tile-description"> The Value Method gives all the value from an object\
+
+                    </div>
+                <div class="arrow" id="Valuesarrow">
+                    <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="tile">
+                <span class="tile-title">Group By</span>
                 <div class="tile-description">It extracts a part of string based on given starting and ending index and
                     returns a new string </div>
-                <div class="arrow" id="slicearrow">
+                <div class="arrow" id="GroupByarrow">
                     <i class="fa fa-paw" aria-hidden="true"></i>
                 </div>
             </div>
-            <!-- <div class="tile">
-                <span class="tile-title">To Upper Case</span>
-                <div class="tile-description">It returns the string in Upper Case Alphabets.
-                </div>
-                <div class="arrow" id="touppercasearrow">
-                    <i class="fa fa-paw" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="tile">
-                <span class="tile-title">Search</span>
-                <div class="tile-description">It returns the index of character which matches in the string</div>
-                <div class="arrow" id="searcharrow">
-                    <i class="fa fa-paw" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="tile">
-                <span class="tile-title">Substring</span>
-                <div class="tile-description">It returns the part of the given string from the start index to the end index
-
-                </div>
-                <div class="arrow" id="substringarrow">
-                    <i class="fa fa-paw" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="tile">
-                <span class="tile-title">CodePointAt</span>
-                <div class="tile-description">It returns the UniCode of character at given particular index.</div>
-                <div class="arrow" id="codePointAtarrow">
-                    <i class="fa fa-paw" aria-hidden="true"></i>
-                </div>
-            </div> -->
         </div>
     </div>
 
-    <div class="modal-length-overlay hide">
+    <div class="modal-Object-overlay hide">
         <div class="modal-wrapper">
             <div class="close-btn-wrapper">
-                <div class="close-length-modal-btn">
+                <div class="close-Object-modal-btn">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
             </div>
-            <h1>Length Method </h1>
+            <h1>Object Method</h1>
             <div class="modal-content">
-                <span class="heading">Find the length of string </span>
-                <form onsubmit="lengthMethod(event)">
-                    <input type="text" placeholder="Enter inputs for array" id="lengthString"
-                        oninput="" />
-                    <!-- <input type="text" placeholder="Enter number to find greater number " id="number" /> -->
+                <span class="heading">Create a object by providing keys and values</span>
+                <form onsubmit="objectMethod(event)">
+                    <input type="text" placeholder="Enter Keys for Object" id="ObjectKey" oninput="" />
+                    <input type="text" placeholder="Enter Value for Object " id="ObjectValue" />
                     <span id="findError"></span>
                     <button type="submit" class="button">Submit</button>
                 </form>
-                <div id="lengthResultDiv" style="font-size: 15px;
-    font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
-
-                    For Example :- str = "helloworld"
-                    <span style="font-size: 20px;">Result :- The length of string is 10</span>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="overlay hidden"></div>
-
-    <div class="modal-replace-overlay hide">
-        <div class="modal-wrapper">
-            <div class="close-btn-wrapper">
-                <div class="close-replace-modal-btn">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </div>
-            </div>
-            <h1>Replace Method</h1>
-            <div class="modal-content">
-                <span class="heading">Replace the string ....</span>
-                <form onsubmit="replaceMethod(event)">
-                    <input type="text" placeholder="Enter the String" id="String"
-                        oninput="" />
-                    <input type="text" placeholder="Enter a part of string want to change " id="value1" />
-                    <input type="text" placeholder="Enter a string to change" id="value2" />
-                    <span id="findError"></span>
-                    <button type="submit" class="button">Submit</button>
-                </form>
-                <div id="replaceResultDiv" style="font-size: 15px;
-    font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
-
-                    For Example :- arr = [12,33,4,55,66] , number = 45
-                    <span style="font-size: 20px;">Result :- 55</span>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="overlay hidden"></div>
-
-    <div class="modal-concat-overlay hide">
-        <div class="modal-wrapper">
-            <div class="close-btn-wrapper">
-                <div class="close-concat-modal-btn">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </div>
-            </div>
-            <h1>Concat Method </h1>
-            <div class="modal-content">
-                <span class="heading">Enter String to Concat</span>
-                <form onsubmit="concatMethod(event)">
-                    <input type="text" placeholder="Enter first String" id="string1"
-                        oninput="" />
-                        <input type="text" placeholder="Enter second String " id="string2" />
-                        <input type="text" placeholder="Enter third String " id="string3" />
-                    <span id="findError"></span>
-                    <button type="submit" class="button">Submit</button>
-                </form>
-                <div id="concatResultDiv" style="font-size: 15px;
-    font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
-
-                    For Example :- str1 = "hello" str2 = "world"
-                    <span style="font-size: 20px;">Concat String is  :- "helloworld"</span>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="overlay hidden"></div>
-
-    <div class="modal-slice-overlay hide">
-        <div class="modal-wrapper">
-            <div class="close-btn-wrapper">
-                <div class="close-slice-modal-btn">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </div>
-            </div>
-            <h1>Slice Method</h1>
-            <div class="modal-content">
-                <span class="heading">Get the String from the given start or end Index</span>
-                <form onsubmit="sliceMethod(event)">
-                    <input type="text" placeholder="Enter String" id="sliceString"
-                        oninput="" /> <span id="findError"></span>
-                        <input type="text" placeholder="Enter start index" id="startIndex"
-                        oninput="" />
-                        <input type="text" placeholder="Enter end index" id="endIndex"
-                        oninput="" />
-
-
-                    <button type="submit" class="button">Submit</button>
-                </form>
-                <div id="sliceResultDiv" style="font-size: 15px;
-                font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
-
-                    For Example :- String = "helloworld" ,StartIndex = 3 , EndIndex = 7 
-                     <span style="font-size: 20px;">Result :- lowo</span>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="overlay hidden"></div>
-
-    <div class="modal-toUpperCase-overlay hide">
-        <div class="modal-wrapper">
-            <div class="close-btn-wrapper">
-                <div class="close-toUpperCase-modal-btn">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </div>
-            </div>
-            <h1>Upper Case Method </h1>
-            <div class="modal-content">
-                <span class="heading">Convert String to UpperCase</span>
-                <form onsubmit="toUpperCaseMethod(event)">
-                    <input type="text" placeholder="Enter inputs for String" id="toUpperCaseString"
-                        oninput="" />
-                    <!-- <input type="text" placeholder="Enter number to find greater number " id="number" /> -->
-                    <span id="findError"></span>
-                    <button type="submit" class="button">Submit</button>
-                </form>
-                <div id="toUpperCaseResultDiv"
-                    style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
-
-                    For Example :- String = "helloworld"
-                    <span style="font-size: 20px;">Result :- "HELLOWORLD"</span>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="overlay hidden"></div>
-
-    <div class="modal-search-overlay hide">
-        <div class="modal-wrapper">
-            <div class="close-btn-wrapper">
-                <div class="close-search-modal-btn">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </div>
-            </div>
-            <h1>Search Method</h1>
-            <div class="modal-content">
-                <span class="heading">Find the index of character from the string</span>
-                <form onsubmit="SearchMethod(event)">
-                    <input type="text" placeholder="Enter inputs for String" id="searchString"
-                        oninput="" />
-                    <input type="text" placeholder="Enter single character " id="character" />
-                    <span id="findError"></span>
-                    <button type="submit" class="button">Submit</button>
-                </form>
-                <div id="searchResultDiv"
+                <div id="ObjectResultDiv"
                     style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
 
                     For Example :- string = "helloworld" character = l
@@ -370,27 +210,54 @@
     </div>
     <div class="overlay hidden"></div>
 
-    <div class="modal-subString-overlay hide">
+    <div class="modal-Entries-overlay hide">
         <div class="modal-wrapper">
             <div class="close-btn-wrapper">
-                <div class="close-substring-modal-btn">
+                <div class="close-Entries-modal-btn">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
             </div>
-            <h1>Substring Method</h1>
+            <h1>Entries Method </h1>
             <div class="modal-content">
-                <span class="heading">Get the part of string from the given string</span>
-                <form onsubmit="subStringMethod(event)">
-                    <input type="text" placeholder="Enter String" id="originalString"
-                        oninput="" /> 
-                        <input type="text" placeholder="Enter start index" id="startIndexStr"
-                        oninput="" />
-                        <input type="text" placeholder="Enter end index" id="endIndexStr"
-                        oninput="" />
+                <span class="heading">Enter Object for array</span>
+                <form onsubmit="entriesMethod(event)">
+                    <input type="text" placeholder="Enter the Object " id="objectElement" />
+                    <input type="text" placeholder="Enter the index " id="indexOfObject" />
+                    <!-- <input type="text" placeholder="Enter third String " id="string3" /> -->
                     <span id="findError"></span>
                     <button type="submit" class="button">Submit</button>
                 </form>
-                <div id="subStringResultDiv"
+                <div id="EntriesResultDiv" style="font-size: 15px;
+    font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+
+                    For Example :- str1 = "hello" str2 = "world"
+                    <span style="font-size: 20px;">Entries String is :- "helloworld"</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <div class="modal-assign-overlay hide">
+        <div class="modal-wrapper">
+            <div class="close-btn-wrapper">
+                <div class="close-assign-modal-btn">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+            <h1>assign Method</h1>
+            <div class="modal-content">
+                <span class="heading">Assing a new value to object</span>
+                <form onsubmit="assignMethod(event)">
+                    <!-- <input type="text" placeholder="Enter String" id="originalString"
+                        oninput="" />  -->
+                    <input type="text" placeholder="Enter the target Object" id="targetObject" oninput="" />
+                    <input type="text" placeholder="Enter the source Object" id="sourceObject" oninput="" />
+                    <span id="findError"></span>
+                    <button type="submit" class="button">Submit</button>
+                </form>
+                <div id="assignResultDiv"
                     style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
 
                     For Example :- String = "helloworld" , number = 45
@@ -402,24 +269,84 @@
     </div>
     <div class="overlay hidden"></div>
 
-    <div class="modal-codePointAt-overlay hide">
+    <div class="modal-FromEntries-overlay hide">
         <div class="modal-wrapper">
             <div class="close-btn-wrapper">
-                <div class="close-codePointAt-modal-btn">
+                <div class="close-FromEntries-modal-btn">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
             </div>
-            <h1>CodePointAt Method</h1>
+            <h1>FromEntries Method</h1>
             <div class="modal-content">
-                <span class="heading">Find the unicode of the character from the given String</span>
-                <form onsubmit="codePointAtMethod(event)">
-                    <input type="text" placeholder="Enter String" id="codePointAtString"
-                        oninput="" />
-                    <input type="text" placeholder="Enter the Index " id="index" />
-                    
+                <span class="heading">Convert array to object</span>
+                <form onsubmit="fromEntriesMethod(event)">
+                    <input type="text" placeholder="Enter the array value" id="fromEntriesId" oninput="" /> <span
+                        id="findError"></span>
+                    <!-- <input type="text" placeholder="Enter the " id="startIndex" -->
+                    <!-- oninput="" /> -->
+                    <!-- <input type="text" placeholder="Enter end index" id="endIndex"
+                        oninput="" /> -->
+
+
                     <button type="submit" class="button">Submit</button>
                 </form>
-                <div id="codePointAtResultDiv"
+                <div id="fromEntriesResultDiv" style="font-size: 15px;
+                font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+
+                    For Example :- String = "helloworld" ,StartIndex = 3 , EndIndex = 7
+                    <span style="font-size: 20px;">Result :- lowo</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <div class="modal-Values-overlay hide">
+        <div class="modal-wrapper">
+            <div class="close-btn-wrapper">
+                <div class="close-Values-modal-btn">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+            <h1>Value Method </h1>
+            <div class="modal-content">
+                <span class="heading">Get all values from the Object</span>
+                <form onsubmit="valuesMethod(event)">
+                    <input type="text" placeholder="Enter inputs for String" id="valuesObject" oninput="" />
+                    <!-- <input type="text" placeholder="Enter number to find greater number " id="number" /> -->
+                    <span id="findError"></span>
+                    <button type="submit" class="button">Submit</button>
+                </form>
+                <div id="valuesResultDiv"
+                    style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+
+                    For Example :- String = "helloworld"
+                    <span style="font-size: 20px;">Result :- "HELLOWORLD"</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <div class="modal-GroupBy-overlay hide">
+        <div class="modal-wrapper">
+            <div class="close-btn-wrapper">
+                <div class="close-GroupBy-modal-btn">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+            <h1>GroupBy Method</h1>
+            <div class="modal-content">
+                <span class="heading">Find the unicode of the character from the given String</span>
+                <form onsubmit="groupByMethod(event)">
+                    <input type="text" placeholder="Enter array of objects" id="groupByObject" oninput="" />
+                    <input type="text" placeholder="Enter the key " id="key" />
+
+                    <button type="submit" class="button">Submit</button>
+                </form>
+                <div id="groupByResultDiv"
                     style="font-size: 15px;font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 10px;">
 
                     For Example :- String = "helloworld" , index = 2
@@ -474,7 +401,7 @@
         </div>
     </div>
 </body>
-<script src="./stringMethod.js">
+<script src="./objectMethod.js">
 
 
 </script>

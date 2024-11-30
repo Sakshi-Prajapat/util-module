@@ -56,7 +56,7 @@ li a {
     width: 80%;
     height: 70vh;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     top: 15%;
 }
@@ -163,7 +163,7 @@ li a {
     padding: 20px;
 }
 
-.modal-find-overlay,
+/* .modal-ApiCall-overlay,
     .modal-filter-overlay,
     .modal-map-overlay,
     .modal-sort-overlay,
@@ -194,7 +194,7 @@ li a {
         border-radius: 20px;
     }
 
-    .close-modal-btn,
+    .close-ApiCall-btn,
     .close-filter-modal-btn,
     .close-sort-modal-btn,
     .close-reduce-modal-btn ,.close-slice-modal-btn,.close-enteries-modal-btn,.close-splice-modal-btn ,.close-flat-modal-btn, .close-indexOf-modal-btn,.close-map-modal-btn{
@@ -234,7 +234,7 @@ li a {
         padding: 12px 20px;
         width: 100%;
         border-radius: 10px;
-        /* box-sizing: border-box; */
+         box-sizing: border-box; 
     }
 
     .button {
@@ -261,4 +261,4 @@ li a {
     h1 {
         text-align: center;
         font-family: 'Nigelina', sans-serif;
-    }
+    } */
